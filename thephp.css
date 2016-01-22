@@ -1,0 +1,52 @@
+html {
+    background: #3a8dd4;
+}
+
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 100vw;
+    height: 100px;
+}
+
+h1 {
+    line-height: 100px;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+div {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background: #02baba;
+}
+
+#description {
+    line-height: 100px;
+}
+
+.bold {
+    font-weight: 300;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+ul li {
+    text-decoration: none;
+    list-style: none;
+    line-height: 40px;
+    position: relative;
+    margin-left: -40px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    left: 0;
+    background: black;
+    color: white;
+    text-align: center;
+}

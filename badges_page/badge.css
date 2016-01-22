@@ -1,0 +1,134 @@
+/*
+Colors:
+Black:          #202020
+Blue:           #102A44
+Navy Green:     #112F30
+Emerald Green:  #25653C
+Mint Green:     #4EBC5E
+Light Blue:     #A6ECDD
+*/
+
+h1, h3 {
+    font-family: sans-serif;
+    font-weight: 100;
+    color: white;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    width: 100vw;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+nav {
+    height: 100px;
+    width: 100vw;
+    background: #202020;
+}
+
+table {
+    width: 100vw;
+}
+
+table tr td {
+    height: 100px;
+}
+
+.third {
+    width: 33vw;
+    height: 100px;
+    float: left;
+}
+
+nav h1 {
+    width: 50%;
+    text-align: center;
+    line-height: 100px;
+    margin: auto;
+}
+
+#menu {
+    height: 100px;
+    width: 100px;
+    position: inherit;
+    float: right;
+    background: #434343;
+    border: none;
+}
+
+#banner {
+    height: 700px;
+    width: 101vw;
+    background-image: linear-gradient(#000000,#2477cb);
+    margin-top: -40px;
+}
+
+#search {
+    height: 100px;
+    width: 50vw;
+    margin: auto;
+    top: 80px;
+    position: relative;
+    background: #e0e0e0;
+}
+
+#search h1 {
+    color: #a0a0a0;
+    line-height: 100px;
+    padding-left: 30px;
+    font-size: 3vw;
+}
+
+#toMap {
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    margin-top: 250px;
+    background: #c6c6c6;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#toMap h3 {
+    color: #000000;
+}
+
+#badges {
+    height: 100vh;
+    background: #202020;
+    margin-top: -30px;
+}
+
+#badges h1 {
+    text-align: center;
+    line-height: 100px;
+}
+
+#display {
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.badge {
+    height: 10vw;
+    width: 10vw;
+    display: inline-block;
+    background: grey;
+    border-radius: 100px;
+    margin: 1vw;
+    min-width: 100px;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+.badge img {
+    height: 100%;
+    width: 100%;
+}

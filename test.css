@@ -1,0 +1,28 @@
+html {
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    margin-top: -10px;
+    margin-left: -10px;
+    background: rgba(62, 62, 62, 0.46);
+}
+
+h1 {
+    text-align: center;
+    
+}
+
+#space {
+    margin-top: -10px;
+    margin-left: -10px;
+    height: 101vh;
+    width: 101vw;
+}
+
+#space img {
+    height: 130%;
+}
