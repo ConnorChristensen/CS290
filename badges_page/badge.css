@@ -62,7 +62,7 @@ nav h1 {
 #banner {
     height: 700px;
     width: 101vw;
-    background-image: linear-gradient(#cccccc,#2477cb);
+    background-image: linear-gradient(#ffffff,#2477cb);
     margin-top: -40px;
 }
 
@@ -91,6 +91,10 @@ nav h1 {
     line-height: 50px;
     text-align: center;
     font-size: 30px;
+}
+
+#toMap a {
+    text-decoration: none;
 }
 
 #toMap h3 {
