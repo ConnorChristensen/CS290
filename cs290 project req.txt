@@ -1,0 +1,39 @@
+database: user->locations/badges; user -> login info
+login: link to database that hashes to user
+data entry: app takes geolocation -> database; sign up page -> database
+cool feature: app that pushes geolocation to database
+scalability: badges for around OSU first then expanded
+security: login page -> database; geo location -> database; [user profile < private/public]
+
+HW3:|-> initial database
+	|	|-> 2 or more table
+	|	|-> insert test data
+	| 
+	|-> website structure
+	|	|-> html/css
+	|	|-> basic PHP
+	
+HW4:|-> login page
+		|-> data entry
+		|-> data display
+
+HW5:
+|-> login done
+|-> data entry
+	|-> pages
+	|-> log
+
+HW6:
+	|-> data display
+	|-> cool feature
+		|-> pages
+		|-> data entry
+
+HW7: 
+|-> testing
+	|-> database
+		|-> stress test
+	|-> overall stability
+
+HW8:
+	PROJECT DUE!
