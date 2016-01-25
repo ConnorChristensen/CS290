@@ -11,7 +11,6 @@ Light Blue:     #A6ECDD
 h1, h3 {
     font-family: sans-serif;
     font-weight: 100;
-    color: white;
 }
 
 html {
@@ -27,7 +26,7 @@ body {
 nav {
     height: 100px;
     width: 100vw;
-    background: #202020;
+    background: #ffffff;
 }
 
 table {
@@ -63,7 +62,7 @@ nav h1 {
 #banner {
     height: 700px;
     width: 101vw;
-    background-image: linear-gradient(#000000,#2477cb);
+    background-image: linear-gradient(#cccccc,#2477cb);
     margin-top: -40px;
 }
 
@@ -100,7 +99,7 @@ nav h1 {
 
 #badges {
     height: 100vh;
-    background: #202020;
+    background: #ffffff;
     margin-top: -30px;
 }
 
