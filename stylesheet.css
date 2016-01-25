@@ -13,7 +13,12 @@ nav {
 
 h1 {
     text-align: center;
-    
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    line-height: 50px;
 }
 
 #space {
