@@ -1,0 +1,24 @@
+html {
+    background: black;
+}
+
+
+#home {
+    text-align: center;    
+    margin-top: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+#map {
+    margin: auto;
+    margin-left: -10px;
+    margin-top: 20px;
+    width: 100vw;
+    height: 90vh;
+}
