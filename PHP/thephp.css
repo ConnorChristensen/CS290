@@ -1,12 +1,15 @@
 html {
     background: #3a8dd4;
+    overflow-x: hidden;
+    height: 1000px;
 }
 
 body {
     margin-top: 0px;
     margin-left: 0px;
     width: 100vw;
-    height: 100px;
+    height: auto;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -48,5 +51,17 @@ footer {
     left: 0;
     background: black;
     color: white;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    width: 20%;
+}
+
+td {
     text-align: center;
 }
