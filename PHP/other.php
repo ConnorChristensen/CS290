@@ -8,6 +8,7 @@
 <body>
     <nav>
         <h1>Test Website: by Connor Christensen</h1>
+        <a href="../index.html"><h2>HOME</h2></a>
     </nav>
 
     <div>
