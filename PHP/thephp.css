@@ -4,6 +4,13 @@ html {
     height: 1000px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    width: 100vw;
+    text-align: center;
+}
+
 body {
     margin-top: 0px;
     margin-left: 0px;
@@ -17,6 +24,11 @@ h1 {
     text-align: center;
     background: black;
     color: white;
+}
+
+h2 {
+    width: 100vw;
+    text-align: center;
 }
 
 div {
