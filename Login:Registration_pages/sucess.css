@@ -1,0 +1,21 @@
+body{
+    background: linear-gradient( white, #2477cb);
+}
+
+h1 {
+    padding-top: 1cm;
+    padding-left: 1cm;
+    padding-bottom: .25cm;
+    font-size: 40px;
+    color: black;  
+    border-width: thick;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+p {
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    padding-left: 1cm;
+    padding-right: 3cm;
+}
