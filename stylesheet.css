@@ -1,33 +1,84 @@
 html {
     overflow-x: hidden;
+    background: url(Images/Lighthouse_3.jpg) no-repeat center center fixed;  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 2000px;
 }
 
 nav {
     position: fixed;
     width: 100vw;
-    height: 200px;
+    height: auto;
     margin-top: -10px;
     margin-left: -10px;
-    background: rgba(62, 62, 62, 0.46);
-}
-
-h1 {
-    text-align: center;
-    color: black;
+    background: rgba(113, 113, 113, 0.83);
 }
 
 a {
     text-decoration: none;
     line-height: 50px;
+    text-align: center;
+    color: white;
+    transition: .5s;
+    font-size: 25px;
 }
 
-#space {
-    margin-top: -10px;
-    margin-left: -10px;
-    height: 101vh;
+a:hover {
+    transition: .5s;
+    color: #48ffff;
+}
+
+table {
     width: 101vw;
+    height: 100px;
 }
 
-#space img {
-    height: 130%;
+td {
+    text-align: center;
+    width: 16.7%;
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+}
+
+td:hover {
+    background: #1f1f1f;
+    transition: .5s;
+}
+
+#center {
+    position: absolute;
+    margin-top: 40vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.logo {
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 200px;
+    width: 200px;
+    background: white;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+#SQ {
+    border-radius: 0px;
+}
+
+#APP {
+    border-radius: 50px;
+}
+
+#CIR {
+    border-radius: 200px;
 }

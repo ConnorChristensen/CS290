@@ -33,6 +33,11 @@ table {
     width: 100vw;
 }
 
+table img {
+    height: 100px;
+    width: 100px;
+}
+
 table tr td {
     height: 100px;
 }
