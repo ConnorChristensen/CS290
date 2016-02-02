@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_array($result)) {
 	# Get badge information associated with each badge ID from Badges table	
 	$bid = $row['badgeid'];
 	$sql2 = "select * from Badges where badgeid = '$bid'";
-	$result2 = mysqli_query($con, $sql2) or die("Error: " . mysqli_error());
+	$result2 = mysqli_query($con, $sql2) or die("Error: " . mysqli_error($con));
 
 	while ($row2 = mysqli_fetch_array($result2)) {
 		echo "Name: " . $row2['name'] . "<br>";
