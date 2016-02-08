@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 		}
 	}
 	//checks if username and email have been inserted into database before
-	if($result = $db->query("select username,email from cs290")){
+	if($result = $db->query("select username,email from Users")){
 		while($obj = $result->fetch_object()){
 			if($obj->username == $user_name){
 				$user_name_err = "Username already taken";
@@ -85,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 	}
 	if($test_name === 1 && $test_email === 1 && $test_pass === 1){
 		$insert = 1;
-		$db->query("insert into cs290(username,password,email,admin,created) VALUES ('{$user_name}','{$pass1}','{$email}','0',NOW())");
+		$db->query("insert into Users(username,password,email,admin,created) VALUES ('{$user_name}','{$pass1}','{$email}','0',NOW())");
 	}
 }
 
@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
     </form>
 	<?php
 	if($insert === 1){
-		if($result = $db->query("select uid,username from cs290")){
+		if($result = $db->query("select uid,username from Users")){
 			while($obj = $result->fetch_object()){
 				if($obj->username == $user_name){
 					$uid = $obj->uid;
