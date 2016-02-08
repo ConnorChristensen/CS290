@@ -1,12 +1,22 @@
 html {
     background: #3a8dd4;
+    overflow-x: hidden;
+    height: 1000px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    width: 100vw;
+    text-align: center;
 }
 
 body {
     margin-top: 0px;
     margin-left: 0px;
     width: 100vw;
-    height: 100px;
+    height: auto;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -14,6 +24,11 @@ h1 {
     text-align: center;
     background: black;
     color: white;
+}
+
+h2 {
+    width: 100vw;
+    text-align: center;
 }
 
 div {
@@ -48,5 +63,17 @@ footer {
     left: 0;
     background: black;
     color: white;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    width: 20%;
+}
+
+td {
     text-align: center;
 }
