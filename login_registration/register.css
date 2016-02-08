@@ -1,5 +1,9 @@
+html {
+    overflow-x: hidden;
+}
+
 body{
-    background: linear-gradient( white, #2477cb);
+    background: linear-gradient(#3ce1ff, #0027c9);
 }
 
 h1 {
@@ -11,6 +15,13 @@ h1 {
     border-width: thick;
     font-family: sans-serif;
     font-weight: 100;
+    width: 100vw;
+    text-align: center;
+}
+
+h3 {
+    width: 100vw;
+    text-align: center;
 }
 
 label {
@@ -21,6 +32,10 @@ label {
     color: black;
 }
 
+table {
+    width: 600px;
+}
+
 .textBox {
     font-size: 20px;
     margin: 5px 0;
@@ -28,18 +43,35 @@ label {
     width: 200px;
 }
 
+#around {
+    margin: auto;
+    background: rgba(2, 2, 2, 0.26);
+    border-radius: 20px;
+    width: 600px;
+    padding: 10px 10px 5px 10px;
+    
+}
+
+.alignRight {
+    text-align: right;
+    margin-right: 10px;
+}
+
 input[type=submit]{
     margin-left: 1cm;
-    margin-top: .1cm;
-    padding-left: .5cm;
-    padding-right: .5cm;
-    padding-bottom: .1cm;
-    padding-top: .1cm;
-    font-size: 10px;
+    margin-top: 20px;
+    padding: .1cm .5cm;
+    font-size: 15px;
     color: white;
     border: none;
     text-decoration: none;
-    background-color: #2c4352;
+    background-color: #ffa907;
     font-family: sans-serif;
     font-weight: 100;
+}
+
+img {
+    text-align: center;
+    max-height: 25%;
+    max-width: 25%;
 }
