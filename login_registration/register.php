@@ -1,11 +1,12 @@
 <?php
 session_start()
 ?>
-<html>
-<head>
-	<title>Badges registration page</title>
-	<link rel="stylesheet" type="text/css" href="./register.css">
-<?php
+    <html>
+
+    <head>
+        <title>Badges registration page</title>
+        <link rel="stylesheet" type="text/css" href="./register.css">
+        <?php
 include "_header.php";
 if($db = connect_db()){$test_db = 1;}else{$test_db = 0;}
 
@@ -90,27 +91,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 }
 
 ?>
-</head>
-<body>
+    </head>
 
-    <h1>REGISTER HERE: </h1>
-	<h3>*required</h3>
-    <form method = "post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label>DESIRED USERNAME: </label>
-        <input type="text" name="username" class="textBox"><span class="error">* <?php echo $user_name_err; ?></span>
-        </br>
-        <label>DESIRED PASSWORD: </label>
-        <input type="password" name="password1" class="textBox"><span class="error">* <?php echo $pass_err; ?></span>
-        </br>
-		<label>Re-Type Password: </label>
-		<input type="password" name="password2" class="textBox"><span class="error">* <?php echo $pass_err_2; ?></span>
-        <br>
-		<label>Email: </label>
-		<input type="text" name="email" class="textBox"><span class="error">* <?php echo $email_err; ?></span>
-		<br>
-		<input type="submit" value="SUBMIT">
-    </form>
-	<?php
+    <body>
+        <a href="../index.html">HOME</a>
+        <h1>REGISTER HERE: </h1>
+        <div id="around">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
+                <table>
+                    <tr>
+                        <td class="alignRight">
+                            <label>Username: </label>
+                        </td>
+                        <td class="inputField">
+                            <input type="text" name="username" class="textBox"><span class="error"><?php echo $user_name_err; ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight">
+                            <label>Password: </label>
+                        </td>
+                        <td class="inputField">
+                            <input type="password" name="password1" class="textBox"><span class="error"><?php echo $pass_err; ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight">
+                            <label>Re-Type Password: </label>
+                        </td>
+                        <td class="inputField">
+                            <input type="password" name="password2" class="textBox"><span class="error"><?php echo $pass_err_2; ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight">
+                            <label>Email: </label>
+                        </td>
+                        <td class="inputField">
+                            <input type="text" name="email" class="textBox"><span class="error"><?php echo $email_err; ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center">
+                            <input type="submit" value="SUBMIT">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <?php
 	if($insert === 1){
 		if($result = $db->query("select uid,username from cs290")){
 			while($obj = $result->fetch_object()){
@@ -121,8 +150,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 			}
 		}
 		$_SESSION["uid"] = "$uid"; //automatically set session when user registers
-	?><script>location.replace('http://web.engr.oregonstate.edu/~buffumw/Login_page/CS290/login_registration/success.php');</script>
-	<?php
+	?>
+            <script>
+                location.replace('http://web.engr.oregonstate.edu/~buffumw/Login_page/CS290/login_registration/success.php');
+            </script>
+            <?php
 	}else{
 		session_unset();
 		session_destroy();
@@ -131,4 +163,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 	$db->close();
 	?>
     </body>
-</html>
+
+    </html>
