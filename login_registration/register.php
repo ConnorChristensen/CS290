@@ -162,6 +162,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 	}
 	$db->close();
 	?>
+    </form>
+    <img src="Images/Thing.png">
+    </body>
     </body>
 
     </html>

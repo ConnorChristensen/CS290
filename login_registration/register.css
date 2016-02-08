@@ -3,7 +3,7 @@ html {
 }
 
 body{
-    background: linear-gradient( white, #2477cb);
+    background: linear-gradient(#3ce1ff, #0027c9);
 }
 
 h1 {
@@ -65,7 +65,13 @@ input[type=submit]{
     color: white;
     border: none;
     text-decoration: none;
-    background-color: #2c4352;
+    background-color: #ffa907;
     font-family: sans-serif;
     font-weight: 100;
+}
+
+img {
+    text-align: center;
+    max-height: 25%;
+    max-width: 25%;
 }
