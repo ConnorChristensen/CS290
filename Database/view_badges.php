@@ -1,32 +1,30 @@
-<?php
+// looks awful right now, but it works. view @ https://web.engr.oregonstate.edu/~claytonh/cs290/view_badges.php
+<script src="jquery-1.12.0.min.js"></script>
+<h1>Badges</h1>
 
-session_start();
+<table class='badges'><tr><th>Badge<th>Name<th>Description<th>Date added</tr>
+</table>
 
-$con = mysqli_connect('oniddb.cws.oregonstate.edu', 'claytonh-db', 'jx8DSk1EJTf2NTdh', 'claytonh-db') or die("Error connecting to database server");
+<script>
+$(document).ready(function() {
+		$.ajax({
+				method:"get",
+				url:"badge_list.php",
+				dataType:"json",
+				error:function(jqXHR) {alert(jqXHR.status);},
+				success:function(list) {
 
-# I'm assuming the session variable for their id is called this.
-$uid = $_SESSION["userid"];
-
-# Get the badge IDs of their current badges from table User_Badges
-$sql = "select badgeid from User_Badges where userid = '$uid'";
-
-$result = mysqli_query($con, $sql) or die("Error: " . mysqli_error($con));
-
-while ($row = mysqli_fetch_array($result)) {
-	# Get badge information associated with each badge ID from Badges table	
-	$bid = $row['badgeid'];
-	$sql2 = "select * from Badges where badgeid = '$bid'";
-	$result2 = mysqli_query($con, $sql2) or die("Error: " . mysqli_error($con));
-
-	while ($row2 = mysqli_fetch_array($result2)) {
-		echo "Name: " . $row2['name'] . "<br>";
-		echo "Description: " . $row2['description'] . "<br>";
-		echo "Date Added: " . $row2['date_added'] . "<br>";
-		echo "<br>";
-	}
-
-}
-
-mysqli_close();
-
-?>
+					for (var i = 0; i < list.length; i++) {
+						var badge = list[i];
+						var tr = $("<TR>");
+						var image = $('<img>').attr("src", badge.image).attr("height", 100).attr("width", 100);
+						tr.append($("<TD>").html(image));
+						tr.append($("<TD>").text(badge.name));
+						tr.append($("<TD>").text(badge.description));
+						tr.append($("<TD>").text(badge.date_added));
+						$(".badges").append(tr);
+					}
+				}
+		});
+});
+</script>
