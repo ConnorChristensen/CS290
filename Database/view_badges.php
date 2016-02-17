@@ -17,7 +17,7 @@ $(document).ready(function() {
 					for (var i = 0; i < list.length; i++) {
 						var badge = list[i];
 						var tr = $("<TR>");
-						var image = $('<img>').attr("src", badge.image)
+						var image = $('<img>').attr("src", badge.image).attr("height", 100).attr("width", 100);
 						tr.append($("<TD>").html(image));
 						tr.append($("<TD>").text(badge.name));
 						tr.append($("<TD>").text(badge.description));
