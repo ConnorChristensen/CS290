@@ -2,6 +2,7 @@ body{
     background: linear-gradient( white, #2477cb);
 }
 
+/*
 h1 {
     padding-top: 1cm;
     padding-left: 1cm;
@@ -18,4 +19,34 @@ p {
     font-size: 20px;
     padding-left: 1cm;
     padding-right: 3cm;
+}*/
+
+h1, p, h3 {
+    width: 100vw;
+    text-align: center;
+    color: black;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#box {
+    height: 100px;
+    width: 100px;
+    background: #6969e3;
+    margin: auto;
+}
+
+#box h2 {
+    width: 100%;
+    line-height: 100px;
+    text-align: center;
+}
+
+#box:hover {
+    color: blue;
+    transition: .4s;
 }
