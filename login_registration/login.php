@@ -1,57 +1,72 @@
 <?php
-session_start();
-if(isset($_SESSION["uid"])){
-	session_unset($_SESSION["uid"]);
+if(!isset($_COOKIE["login_user"])) { //If the session is not set
+    session_start();    //Start the session
+}
+else {
+    echo "It looks like you are already logged in. Would you like to log in as a different user?";
 }
 ?>
 <!DOCTYPE HTML>
-<html>
-<head>
-<title>Badges Login Page</title>
-<link rel="stylesheet" type="text/css" href="./login.css">
-<?php
-include "_header.php";
-	$user_name = $pass_word = "";
-	if($db=connect_db()){
-		$user_name = $_POST["username"];
-		$pass_word = hash('sha256',$_POST["password"] . "$user_name");
-		if($result = $db->query("select uid,username,password from Users")){
-			while($obj = $result->fetch_object()){
-				if($obj->username == $user_name && $obj->password == $pass_word){
-					//automatically set session when user registers
-					$_SESSION["uid"] = "$obj->uid"; 
-				}else{
-					//echo "Username did not match password";
-				}
-			}
-		}
-	}
-?>
-</head>
+    <html>
+    <head>
+        <title>Badges Login Page</title>
+        <link rel="stylesheet" href="login.css"/>
+        <?php
+        $emptyUsername = $emptyPassword = "";
+        // Create connection
+        $connect = mysqli_connect('oniddb.cws.oregonstate.edu','buffumw-db','PizSfykTJBUp3NbW','buffumw-db');
 
-<body>
-<h1>LOGIN HERE:</h1>
-<form method = "post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
-		  <label>USERNAME:</label>
-		  <input type="text" name="username">
-		  </br>
-		  <label>PASSWORD:</label>
-		  <input type="password" name="password">
-		  </br>
-		  <input type="submit" value=" SUBMIT">
-	 </form>
+        // Check connection
+        if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: ".mysqli_connect_error();
+        }
+        else {
+            if (isset($_POST["login"])) {
+                if (empty($_POST["username"]) || empty($_POST["password"])) {
+                    if(empty($_POST["username"])) {
+                        $emptyUsername = "&emsp;The username field is required";
+                    }
+                    if(empty($_POST["password"])) {
+                        $emptyPassword = "&emsp;The password field is required";
+                    }
+                }
+                else {
+                    $username = $_POST["username"];
+                    $password = hash("sha256", $_POST["password"].$username);
 
-<?php
-	if(isset($_SESSION["uid"])){
-?>		
-	<script>
-		location.replace('http://web.engr.oregonstate.edu/~buffumw/Login_page/CS290/login_registration/success.php');
-	</script>
-<?php
-	}
-?>
-	 <a href="register.php">REGISTER HERE</a>
-	 </body>
+                    //SQL injection blockers (only removes backslashes)
+                    $username = stripslashes($username);
+                    $password = stripslashes($password);
 
-
+                    //get the user information in an sql query
+                    $query = mysqli_query($connect,"SELECT * FROM Users WHERE password = '$password' AND username = '$username'");
+                    $rows = mysqli_num_rows($query);
+                    if ($rows == 1) {
+                        $_SESSION["login_user"] = $username;
+                        $sessionSet = true;
+                    } else {
+                        $error = "The username or password was incorrect";
+                    }
+                }
+            }
+        }
+        ?>
+    </head>
+    <body>
+    <h1>LOGIN HERE:</h1>
+    <form method = "post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
+        <label>USERNAME:</label>
+        <input type="text" name="username"><?php echo $emptyUsername;?>
+        </br>
+        <label>PASSWORD:</label>
+        <input type="password" name="password"><?php echo $emptyPassword;?>
+        </br>
+        <input type="submit" value="Login" name="login">
+    </form>
+    <p><?php echo $error;?></p>
+    <?php if($sessionSet) {
+        echo "Your session has been set!";
+    }?>
+    <a href="register.php">REGISTER HERE</a>
+    </body>
 </html>
