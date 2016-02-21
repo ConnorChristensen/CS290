@@ -1,27 +1,37 @@
-//array of badge images
-var badges = [
-	"../Images/badgePics/oregon_badge.png",
-	"../Images/badgePics/badge01.png",
-	"../Images/badgePics/badge02.png",
-	"../Images/badgePics/badge03.png",
-	"../Images/badgePics/badge04.png",
-	"../Images/badgePics/badge05.png",
-	"../Images/badgePics/badge06.png",
-	"../Images/badgePics/badge07.png",
-	"../Images/badgePics/badge08.png",
-	"../Images/badgePics/badge09.png",
-	"../Images/badgePics/badge10.png",
-	"../Images/badgePics/badge11.png",
-	"../Images/badgePics/badge12.png",
-	"../Images/badgePics/badge13.png",
-	"../Images/badgePics/badge14.png",
-	"../Images/badgePics/badge15.png",
-	"../Images/badgePics/badge16.png",
-	"../Images/badgePics/badge17.png",
-	"../Images/badgePics/badge18.png",
-	"../Images/badgePics/badge19.png",
-	"../Images/badgePics/badge20.png",
-];
+var badges = [];
+var user_badges = [];
+
+function images() {
+	$.ajax({
+			method:"get",
+			async:false,
+			url:"get_images.php",
+			dataType:"json",
+			error:function(jqXHR) {alert(jqXHR.status);},
+			success:function(list) {
+				for (var i = 0; i < list.length; i++) {
+					var temp = list[i];
+					badges.push(temp.image);
+				}
+			}
+		});
+}
+
+function user_badges() {
+	$.ajax({
+			method:"get",
+			async:false,
+			url:"get_user_badges.php",
+			dataType:"json",
+			error:function(jqXHR) {alert(jqXHR.status);},
+			success: function(list) {
+				for (var i = 0; i < list.length; i++) {
+					var temp = list[i];
+				}
+					
+			}
+	});
+}
 
 //places the most recently found badge where called
 function mostRecentBadge(){
@@ -61,4 +71,3 @@ window.onclick = function(event) {
 	if(event.target == document.getElementById("myModal"))
 		document.getElementById("myModal").style.visibility="hidden";
 }
-
