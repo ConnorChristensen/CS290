@@ -1,9 +1,13 @@
 <html>
 <html>
-    <link rel="stylesheet" href="badge.css">
+	<link rel="stylesheet" href="badge.css">
     <script src="jquery-1.12.0.min.js"></script>
     <script src="javaScript.js"></script>
 </head>
+
+<script>
+images();
+</script>
 
 <body>
 	<nav>
@@ -33,6 +37,7 @@
     </div>
 
 <!--Places the most recently unlocked badge-->
+
 <script>
 	mostRecentBadge();
 </script>
