@@ -6,11 +6,12 @@ else {
     echo "It looks like you are already logged in. Would you like to log in as a different user?";
 }
 ?>
-<!DOCTYPE HTML>
+    <!DOCTYPE HTML>
     <html>
+
     <head>
         <title>Badges Login Page</title>
-        <link rel="stylesheet" href="login.css"/>
+        <link rel="stylesheet" href="login.css" />
         <?php
         $emptyUsername = $emptyPassword = "";
         // Create connection
@@ -52,21 +53,49 @@ else {
         }
         ?>
     </head>
+
     <body>
-    <h1>LOGIN HERE:</h1>
-    <form method = "post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
-        <label>USERNAME:</label>
-        <input type="text" name="username"><?php echo $emptyUsername;?>
-        </br>
-        <label>PASSWORD:</label>
-        <input type="password" name="password"><?php echo $emptyPassword;?>
-        </br>
-        <input type="submit" value="Login" name="login">
-    </form>
-    <p><?php echo $error;?></p>
-    <?php if($sessionSet) {
-        echo "Your session has been set!";
-    }?>
-    <a href="register.php">REGISTER HERE</a>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
+            <table>
+               <tr>
+                   <td><h1>LOGIN HERE:</h1></td>
+               </tr>
+                <tr>
+                    <td>
+                        <label>USERNAME:</label>
+                        <input type="text" name="username">
+                        <?php echo $emptyUsername;?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>PASSWORD:</label>
+                        <input type="password" name="password">
+                        <?php echo $emptyPassword;?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Login" name="login">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <?php echo $error;?>
+                                <?php if($sessionSet) {
+                            echo "You have been logged in!";
+                        }?>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="register.php">REGISTER HERE</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </body>
-</html>
+
+    </html>

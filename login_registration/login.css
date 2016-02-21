@@ -50,3 +50,9 @@ a {
     font-family: sans-serif;
     color: #f4f8ff;
 }
+
+table {
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+}
