@@ -22,14 +22,14 @@ label {
     color: black;
 }
 
-input[type=text], input[type=test] {
+input[type=text], input[type=test], input[type=password] {
     font-size: 20px;
     margin: 5px 0;
     box-sizing: border-box;
 }
 
 input[type=submit]{
- margin-left: 1cm;
+    margin-left: 1cm;
     margin-top: .1cm;
     padding-left: .5cm;
     padding-right: .5cm;
@@ -49,4 +49,10 @@ a {
     font-size: 18px;
     font-family: sans-serif;
     color: #f4f8ff;
+}
+
+table {
+    width: 60vw;
+    margin: auto;
+    text-align: center;
 }

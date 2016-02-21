@@ -1,6 +1,6 @@
 //array of badge images
 var badges = [
-	"../Images/badgePics/Oregon%20Badge.jpg",
+	"../Images/badgePics/oregon_badge.png",
 	"../Images/badgePics/badge01.png",
 	"../Images/badgePics/badge02.png",
 	"../Images/badgePics/badge03.png",
