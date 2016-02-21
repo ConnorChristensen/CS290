@@ -1,0 +1,21 @@
+
+Pages to add:
+	
+	User settings
+	About
+	Terms and Conditions
+
+Robert is going to create the slide out menu on the badges page
+
+pseudo popup for the badge when you click on it
+
+make some placeholder badges
+
+I have lots of stuff to do with the app
+
+create more location tags for badges
+
+
+
+
+Haversine

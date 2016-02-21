@@ -1,1 +1,5 @@
-http://web.engr.oregonstate.edu/~chriconn/
+Connor	(Main):		http://web.engr.oregonstate.edu/~chriconn/
+Billy	(PHP):		http://web.engr.oregonstate.edu/~buffumw/
+Robert	(JS):		http://web.engr.oregonstate.edu/~rosenber/
+Lily	(CSS):		http://web.engr.oregonstate.edu/~shellhal/
+Heidi	(DataBase):	http://web.engr.oregonstate.edu/~claytonh/

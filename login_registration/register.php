@@ -94,7 +94,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
     </head>
 
     <body>
-        <a href="../index.html">HOME</a>
+        <div id="homebox">
+            <a href="../index.html" id="home">HOME</a>
+        </div>
         <h1>REGISTER HERE: </h1>
         <div id="around">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
