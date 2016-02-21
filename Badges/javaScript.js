@@ -1,5 +1,12 @@
 var badges = [];
+
+// boolean array of whether user has unlocked badge w/ badgeid = i + 1
 var user_badges = [];
+
+var unlock_dates = [];
+
+var desc = "";
+var name = "";
 
 function images() {
 	$.ajax({
@@ -17,7 +24,7 @@ function images() {
 		});
 }
 
-function user_badges() {
+function get_user_badges() {
 	$.ajax({
 			method:"get",
 			async:false,
@@ -27,16 +34,57 @@ function user_badges() {
 			success: function(list) {
 				for (var i = 0; i < list.length; i++) {
 					var temp = list[i];
+					user_badges.push(temp.unlocked);
+					unlock_dates.push(temp.obtained);
 				}
-					
+				
 			}
+	});
+}
+
+function get_badge(badgeid) {
+	badgeid = "badgeid=" + badgeid;
+	console.log(badgeid);
+	$.ajax({
+		method:"get",
+		async:false,
+		url:"get_badge.php",
+		data:badgeid,
+		dataType:"json",
+		error:function(jqXHR) {alert(jqXHR.status);},
+		success: function(list) {
+			if (list.length == 0) {
+				alert("Could not obtain data on that badge.");
+				name = "";
+				desc = "";
+			}
+
+			else {
+				temp = list[0];
+				name = temp.name;
+				desc = temp.description;					
+			}
+		}
+
 	});
 }
 
 //places the most recently found badge where called
 function mostRecentBadge(){
 	//get the most recent badge, example in here now
-	var badge = badges[10];
+	var badge = 0;
+	var idx = 0;
+
+	for (var i = 1; i < unlock_dates.length; i++) {
+		if (user_badges[i] == 1) {
+			if (Date.parse(unlock_dates[i]) > Date.parse(unlock_dates[i - 1])) {
+				console.log(Date.parse(unlock_dates[i]));
+				idx = i;		
+			}
+		}
+	}
+	
+	badge = badges[idx];
 
 	$("#recentBadge").append("<div  class='badge'><img src="+badge+"></div>");
 }
@@ -45,7 +93,17 @@ function mostRecentBadge(){
 function badgePopup(badgeNum) {
 	document.getElementById("myModal").style.visibility = "visible";
 	$("#myModalContent").empty();
-	$("#myModalContent").append(" <h1>BADGE NAME</h1><div class='badge'><img src="+badges[badgeNum]+"></div><br><h2>DESCRIPTION</h2><br><h2>DATE UNLOCKED</h2> ");
+
+	if (user_badges[badgeNum] == 1) {
+		get_badge(badgeNum + 1);
+		$("#myModalContent").append("<h1>"+name+"</h1>"+desc+"<br><h2>DATE UNLOCKED</h2>"+unlock_dates[badgeNum]+"<br>");
+	}
+
+	else {
+		$("#myModalContent").append("You haven't unlocked this badge yet!");
+
+	}
+
 }
 
 
