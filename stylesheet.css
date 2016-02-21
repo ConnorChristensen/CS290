@@ -1,84 +1,83 @@
 html {
     overflow-x: hidden;
-    background: url(Images/Lighthouse_3.jpg) no-repeat center center fixed;  
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    max-width: 2000px;
 }
 
-nav {
-    position: fixed;
+body {
     width: 100vw;
-    height: auto;
+    margin-left: 0px;
+}
+
+#header {
+    width: 100vw;
     margin-top: -10px;
-    margin-left: -10px;
-    background: rgba(113, 113, 113, 0.83);
+    margin-bottom: -15px;
+    text-align: center;
+    background: #8d8dff;
 }
 
-a {
-    text-decoration: none;
+#buttons a{
+    display: inline-block;
+    background: blue;
     line-height: 50px;
-    text-align: center;
     color: white;
-    transition: .5s;
-    font-size: 25px;
-}
-
-a:hover {
-    transition: .5s;
-    color: #48ffff;
-}
-
-table {
-    width: 101vw;
-    height: 100px;
-}
-
-td {
-    text-align: center;
-    width: 16.7%;
+    text-decoration: none;
+    font-family: sans-serif;
+    width: 100px;
     margin: 0;
     padding: 0;
     transition: .5s;
 }
 
-td:hover {
-    background: #1f1f1f;
+#buttons a:hover {
+    background: #009eac;
     transition: .5s;
 }
 
-#center {
-    position: absolute;
-    margin-top: 40vh;
+.sized {
     width: 100vw;
+    height: 70vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.sized p {
+    line-height: 70vh;
     text-align: center;
 }
 
-.logo {
-    overflow: hidden;
-    display: inline-block;
-    margin-left: 20px;
-    margin-right: 20px;
+#banner {
+    background: #c6c6c6;
+    margin-bottom: -15px;
+}
+#webexplain {
+    background: #62c7c7;
+}
+#aboutus {
+    background: #4d40eb;
+}
+#links {
+    background: #c04cd0;
+    height: 200px;
+    text-align: center;
+}
+
+#pictures {
     height: 200px;
     width: 200px;
-    background: white;
+    margin-top: 50%;
+    margin: auto;
 }
 
-.logo img {
-    height: 100%;
-    width: 100%;
+#pictures thead {
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-#SQ {
-    border-radius: 0px;
-}
-
-#APP {
-    border-radius: 50px;
-}
-
-#CIR {
-    border-radius: 200px;
+#pictures td {
+    text-align: center;
+    height: 65px;
+    width: 100px;
+    border-radius: 100px;
+    background: grey;
 }
