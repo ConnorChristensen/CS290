@@ -154,7 +154,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 		$_SESSION["uid"] = "$uid"; //automatically set session when user registers
 	?>
             <script>
-                location.replace('http://web.engr.oregonstate.edu/~buffumw/Login_page/CS290/login_registration/success.php');
+                location.replace('http://web.engr.oregonstate.edu/~chriconn/Badges/badge.php');
             </script>
             <?php
 	}else{

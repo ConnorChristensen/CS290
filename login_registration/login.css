@@ -22,7 +22,7 @@ label {
     color: black;
 }
 
-input[type=text], input[type=test], input[type=password] {
+input[type=text], input[type=password] {
     font-size: 20px;
     margin: 5px 0;
     box-sizing: border-box;
