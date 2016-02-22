@@ -10,6 +10,7 @@ session_start();
 
 <script>
     images();
+    get_user_badges();
 </script>
 
 <body>
