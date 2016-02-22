@@ -63,8 +63,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 			$test_pass = 0;
 		}else{
 			//password cleaning and encrypting with sha256 appended with username
-			$pass1 = hash('sha256',$_POST["password1"]);
-			$pass2 = hash('sha256',$_POST["password2"]);
+			$pass1 = hash('sha256',$_POST["password1"].$user_name);
+			$pass2 = hash('sha256',$_POST["password2"].$user_name);
 			$test_pass = 1;
 			$pass_err = $pass_err_2 = "";
 		}
@@ -87,6 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 	if($test_name === 1 && $test_email === 1 && $test_pass === 1){
 		$insert = 1;
 		$db->query("insert into Users(username,password,email,admin,created) VALUES ('{$user_name}','{$pass1}','{$email}','0',NOW())");
+        $_SESSION["login_user"] = $user_name;
 	}
 }
 
@@ -94,9 +95,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
     </head>
 
     <body>
-        <div id="homebox">
-            <a href="../index.html" id="home">HOME</a>
-        </div>
         <h1>REGISTER HERE: </h1>
         <div id="around">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
@@ -141,6 +139,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
                 </table>
             </form>
         </div>
+        <div id="homebox">
+            <a href="../index.html" id="home">HOME</a>
+        </div>
         <?php
 	if($insert === 1){
 		if($result = $db->query("select uid,username from Users")){
@@ -164,9 +165,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 	}
 	$db->close();
 	?>
-    </form>
-    <img src="Images/Thing.png">
-    </body>
+                </form>
     </body>
 
     </html>

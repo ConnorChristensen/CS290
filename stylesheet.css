@@ -1,64 +1,135 @@
+/*Global*/
 html {
     overflow-x: hidden;
+    min-width: 700px;
 }
-
 body {
-    width: 100vw;
-    margin-left: 0px;
+    margin: 0px;
 }
 
+
+
+/*Navigation*/
 #header {
+    z-index: 1;
     width: 100vw;
-    margin-top: -10px;
-    margin-bottom: -15px;
+    height: 70px;
+    position: absolute;
     text-align: center;
-    background: #8d8dff;
 }
-
+#left img {
+    float: left;
+    height: 70px;
+}
+#buttons {
+    float: right;
+}
+#buttons span {
+    margin-right: 60px;
+}
 #buttons a{
     display: inline-block;
-    background: blue;
-    line-height: 50px;
+    background: hsla(0, 0%, 0%, 0.4);
+    line-height: 60px;
+    margin-top: 15px;
     color: white;
     text-decoration: none;
     font-family: sans-serif;
     width: 100px;
-    margin: 0;
-    padding: 0;
     transition: .5s;
 }
-
 #buttons a:hover {
     background: #009eac;
     transition: .5s;
 }
 
+
+
+/*Windows*/
 .sized {
     width: 100vw;
-    height: 70vh;
-    margin: 0px;
-    padding: 0px;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 100;
 }
 
-.sized p {
-    line-height: 70vh;
-    text-align: center;
-}
 
+
+/*First div*/
 #banner {
-    background: #c6c6c6;
-    margin-bottom: -15px;
+    background: url(Images/Summer%20Snow.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 2000px;
 }
-#webexplain {
-    background: #62c7c7;
-}
-#aboutus {
-    background: #4d40eb;
-}
-#links {
-    background: #c04cd0;
-    height: 200px;
+.content {
+    left: 15%;
+    top: 12%;
+    width: 60vw;
+    min-width: 1000px;
     text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.47);
+}
+.TitleSub {
+    font-size: 15pt;
+    line-height: 50px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.TitleBanner {
+    font-size: 50pt;
+    margin: 10px;
+}
+
+
+
+/*App Explain*/
+.title {
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 20pt;
+}
+.sub {
+    font-size: 14pt;
+}
+#appexplain {
+    background-image: linear-gradient(#0093ff,#65a765);
+}
+#appexplain table {
+    position: absolute;
+    margin: auto;
+    width: 80vw;
+    left: 10%;
+    margin-top: 10%;
+    color: white;
+}
+#appexplain td:first-child  {
+    width: 25%;
+    text-align: center;
+}
+#appexplain img {
+    height: 200px;
+    border-radius: 30px;
+}
+
+
+
+
+/*About Us*/
+#aboutus {
+    background: #2e962e;
 }
 
 #pictures {
@@ -67,17 +138,33 @@ body {
     margin-top: 50%;
     margin: auto;
 }
-
 #pictures thead {
     text-align: center;
     margin: 0;
     padding: 0;
 }
-
 #pictures td {
     text-align: center;
     height: 65px;
     width: 100px;
     border-radius: 100px;
     background: grey;
+}
+
+
+
+
+/*Links*/
+#links {
+    background: #c04cd0;
+    height: 200px;
+    text-align: center;
+}
+
+
+/*Screen Resizing*/
+@media screen and (max-width: 500px) {
+    html {
+        overflow-x: scroll;
+    }
 }
