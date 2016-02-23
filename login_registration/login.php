@@ -84,8 +84,8 @@ else {
                         <p>
                             <?php echo $error;?>
                                 <?php if($sessionSet) {
-                            echo "You have been logged in!";
-                        }?>
+  echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~chriconn/Badges/badge.php\";</script>";
+                                }?>
                         </p>
                     </td>
                 </tr>

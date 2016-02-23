@@ -1,84 +1,170 @@
+/*Global*/
 html {
     overflow-x: hidden;
-    background: url(Images/Lighthouse_3.jpg) no-repeat center center fixed;  
+    min-width: 700px;
+}
+body {
+    margin: 0px;
+}
+
+
+
+/*Navigation*/
+#header {
+    z-index: 1;
+    width: 100vw;
+    height: 70px;
+    position: absolute;
+    text-align: center;
+}
+#left img {
+    float: left;
+    height: 70px;
+}
+#buttons {
+    float: right;
+}
+#buttons span {
+    margin-right: 60px;
+}
+#buttons a{
+    display: inline-block;
+    background: hsla(0, 0%, 0%, 0.4);
+    line-height: 60px;
+    margin-top: 15px;
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    width: 100px;
+    transition: .5s;
+}
+#buttons a:hover {
+    background: #009eac;
+    transition: .5s;
+}
+
+
+
+/*Windows*/
+.sized {
+    width: 100vw;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 100;
+}
+
+
+
+/*First div*/
+#banner {
+    background: url(Images/Summer%20Snow.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     max-width: 2000px;
 }
-
-nav {
-    position: fixed;
-    width: 100vw;
-    height: auto;
-    margin-top: -10px;
-    margin-left: -10px;
-    background: rgba(113, 113, 113, 0.83);
-}
-
-a {
-    text-decoration: none;
-    line-height: 50px;
+.content {
+    left: 15%;
+    top: 12%;
+    width: 60vw;
+    min-width: 1000px;
     text-align: center;
     color: white;
-    transition: .5s;
-    font-size: 25px;
-}
-
-a:hover {
-    transition: .5s;
-    color: #48ffff;
-}
-
-table {
-    width: 101vw;
-    height: 100px;
-}
-
-td {
-    text-align: center;
-    width: 16.7%;
-    margin: 0;
-    padding: 0;
-    transition: .5s;
-}
-
-td:hover {
-    background: #1f1f1f;
-    transition: .5s;
-}
-
-#center {
+    font-family: 'Open Sans';
+    font-weight: 100;
     position: absolute;
-    margin-top: 40vh;
-    width: 100vw;
-    text-align: center;
+    background: rgba(0, 0, 0, 0.47);
+}
+.TitleSub {
+    font-size: 15pt;
+    line-height: 50px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.TitleBanner {
+    font-size: 50pt;
+    margin: 10px;
 }
 
-.logo {
-    overflow: hidden;
-    display: inline-block;
-    margin-left: 20px;
-    margin-right: 20px;
+
+
+/*App Explain*/
+.title {
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 20pt;
+}
+.sub {
+    font-size: 14pt;
+}
+#appexplain {
+    background-image: linear-gradient(#0093ff,#65a765);
+}
+#appexplain table {
+    position: absolute;
+    margin: auto;
+    width: 80vw;
+    left: 10%;
+    margin-top: 10%;
+    color: white;
+}
+#appexplain td:first-child  {
+    width: 25%;
+    text-align: center;
+}
+#appexplain img {
+    height: 200px;
+    border-radius: 30px;
+}
+
+
+
+
+/*About Us*/
+#aboutus {
+    background: #2e962e;
+}
+
+#pictures {
     height: 200px;
     width: 200px;
-    background: white;
+    margin-top: 50%;
+    margin: auto;
+}
+#pictures thead {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#pictures td {
+    text-align: center;
+    height: 65px;
+    width: 100px;
+    border-radius: 100px;
+    background: grey;
 }
 
-.logo img {
-    height: 100%;
-    width: 100%;
+
+
+
+/*Links*/
+#links {
+    background: #c04cd0;
+    height: 200px;
+    text-align: center;
 }
 
-#SQ {
-    border-radius: 0px;
-}
 
-#APP {
-    border-radius: 50px;
-}
-
-#CIR {
-    border-radius: 200px;
+/*Screen Resizing*/
+@media screen and (max-width: 500px) {
+    html {
+        overflow-x: scroll;
+    }
 }
