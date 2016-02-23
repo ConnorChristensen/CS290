@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php include("_header.php");?>
 <html>
 <html>
 <link rel="stylesheet" href="badge.css">
@@ -9,8 +7,8 @@ session_start();
 </head>
 
 <script>
-    images();
-    get_user_badges();
+	images();
+	get_user_badges();
 </script>
 
 <body>

@@ -6,8 +6,9 @@ header('Content-type: application/json;charset=UTF-8');
 
 $user_badges = array();
 
-$uid = 1;
+//$uid = $_SESSION['uid'];
 
+$uid = 1;
 $sql = "select * from User_Badges where uid='$uid'";
 
 $result = mysqli_query($con, $sql) or die("Error: " . mysqli_error($con));

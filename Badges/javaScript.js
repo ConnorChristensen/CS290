@@ -9,6 +9,7 @@ var desc = "";
 var name = "";
 
 function images() {
+
 	$.ajax({
 			method:"get",
 			async:false,
@@ -40,6 +41,8 @@ function get_user_badges() {
 				
 			}
 	});
+	console.log(user_badges);
+	console.log(unlock_dates);
 }
 
 function get_badge(badgeid) {
