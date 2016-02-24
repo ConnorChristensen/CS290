@@ -32,7 +32,7 @@
                         <img src="../Images/empty_user.png" alt="">
                     </div>
                     <div class="hiddenDropDown" id="dropDownHolder">
-                        <div class="dropDownThings">account settings</div>
+                        <!--<div class="dropDownThings">account settings</div>-->
                         <button class="dropDownThings" onclick="areYouSure()">logout</button>
                     </div>
                 </td>
