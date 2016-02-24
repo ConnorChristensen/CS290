@@ -5,6 +5,24 @@
     <link type="text/css" rel="stylesheet" href="stylesheet.css" />
     <title>Welcome</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <!--
+       This is a javascript function that makes the screen smooth scroll
+       <script>
+        $(function() {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        }); 
+        </script>-->
 </head>
 
 <body>
@@ -28,6 +46,9 @@
             <p class="TitleBanner">UNLOCK THE WORLD</p>
             <p class="TitleSub">Geo is a travel companion to keep track of all the wonderful places you have been and will be your guide to the next great thing. If you travel to a cool place thats on our list, Geo will give you a badge for having traveled there, so you can log in at any time and see a list of badges you have unlocked.</p>
         </div>
+        <div id="button">
+            <a href="Map_Showcase/travel.html">See Our Location Maps</a>
+        </div>
     </div>
     <div class="sized" id="appexplain">
         <table>
@@ -48,30 +69,30 @@
         </table>
     </div>
 
-    <table class="sized" id="aboutus">
-        <tr>
-            <td>
-                <table id="pictures">
-                    <th colspan="3">Who we are</th>
-                    <tr>
-                        <td>connor</td>
-                        <td>lily</td>
-                        <td>billy</td>
-                    </tr>
-                    <tr>
-                        <td>heidi</td>
-                        <td>robert</td>
-                        <td>ian</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <p>This text box will explain who we are and why we wrote this</p>
-            </td>
-        </tr>
-    </table>
-    <div id="links">
-        <p>These are links to things</p>
+    <div class="sized" id="aboutus">
+        <table id="pictures">
+            <th colspan="3">Who we are</th>
+            <tr>
+                <td class="staff">Connor</td>
+                <td class="staff">Billy</td>
+                <td class="staff">Heidi</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
+            </tr>
+            <tr>
+                <td class="staff">Robert</td>
+                <td class="staff">Lily</td>
+                <td class="staff">Ian</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
+            </tr>
+        </table>
     </div>
 </body>
 
