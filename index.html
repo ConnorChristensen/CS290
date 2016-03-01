@@ -5,10 +5,8 @@
     <link type="text/css" rel="stylesheet" href="stylesheet.css" />
     <title>Welcome</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-    <!--
-       This is a javascript function that makes the screen smooth scroll
-       <script>
-        $(function() {
+    <script>
+        $(function () {
             $('a[href*="#"]:not([href="#"])').click(function () {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                     var target = $(this.hash);
@@ -21,8 +19,8 @@
                     }
                 }
             });
-        }); 
-        </script>-->
+        });
+    </script>
 </head>
 
 <body>
@@ -58,8 +56,7 @@
             <tr>
                 <td><img src="Images/logo.png" alt=""></td>
                 <td>
-                    <p class="sub">We don’t expect you to carry your laptop on your hike up half-dome or need you to have a WiFi connection on your drive through Montana. Thats why we built an iPhone app to work with this website. Download the free app through the app store, log in, and you are good to go. Anytime you are within range of a badge, just press the <em>“validate my location"</em> button and we will take care of the rest.</p>
-                    <p class="sub" style="text-align: center">(Currently only available on iPhone)</p>
+                    <p class="sub">We don’t expect you to carry your laptop on your hike up half-dome or need you to have a WiFi connection on your drive through Montana. Thats why we built an iPhone app to work with this website. Download the free app through the app store, log in, and you are good to go. Anytime you are within range of a badge, just press the <em>“validate my location"</em> button and we will take care of the rest. We are in the proccess of developing an Android app as well, so everyone can participate.</p>
                 </td>
             </tr>
             <tr>
@@ -68,29 +65,52 @@
             </tr>
         </table>
     </div>
-
-    <div class="sized" id="aboutus">
+    <div class="sized" id="inbetween">
+    </div>
+    <div id="aboutus">
         <table id="pictures">
-            <th colspan="3">Who we are</th>
+            <th colspan="3" style="font-size:30pt; font-weight: 100">Who we are</th>
             <tr>
-                <td class="staff">Connor</td>
-                <td class="staff">Billy</td>
-                <td class="staff">Heidi</td>
+                <td class="staff">
+                    <div class="top">
+                        <img src="Images/empty_user.png" alt="Billy">
+                    </div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsam qui voluptate at nihil, et incidunt nulla ipsum obcaecati hic dicta non distinctio repellendus.</p>
+                    </div>
+                </td>
+                <td class="staff">
+                   <div class="top"><img src="Images/creators/connor.jpeg" alt="Connor"></div>
+                   <div class="bottom"><p>Hello, I'm Connor. I put most of my effort into design of the website and the building of the iPhone app. Most of my development was in PHP, HTML, CSS, JavaScript and Swift.</p></div>
+                </td>
+                <td class="staff">
+                    <div class="top">
+                        <img src="Images/empty_user.png" alt="Heidi">
+                    </div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti obcaecati exercitationem quod non magni possimus laudantium culpa ad asperiores nulla similique ab modi, distinctio iusto maxime!</p>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
-            </tr>
-            <tr>
-                <td class="staff">Robert</td>
-                <td class="staff">Lily</td>
-                <td class="staff">Ian</td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ullam, illo necessitatibus perferendis corporis maiores, placeat, enim assumenda asperiores odit quis dolore? Exercitationem enim recusandae sapiente aut, fugit aliquid deleniti.</td>
+                <td class="staff">
+                    <div class="top"><img src="Images/empty_user.png" alt="Robert"></div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae deleniti sapiente adipisci, quod perspiciatis, consectetur assumenda veritatis vero tempora libero nam unde non.</p>
+                    </div>
+                </td>
+                <td class="staff">
+                    <div class="top"><img src="Images/empty_user.png" alt="Lily"></div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste vitae, harum dolores! Doloremque cupiditate sit veritatis hic id doloribus, dignissimos aut obcaecati.</p>
+                    </div>
+                </td>
+                <td class="staff">
+                    <div class="top"><img src="Images/empty_user.png" alt="ian"></div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolorem est non at nemo assumenda expedita aspernatur eaque asperiores? Velit assumenda facere maiores.</p>
+                    </div>
+                </td>
             </tr>
         </table>
     </div>

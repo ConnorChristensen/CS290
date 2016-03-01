@@ -4,7 +4,7 @@ html {
 
 
 #home {
-    text-align: center;    
+    text-align: center;
     margin-top: 30px;
 }
 
@@ -13,6 +13,13 @@ a {
     text-decoration: none;
     line-height: 20px;
     font-size: 20px;
+    font-family: 'Open-Sans', sans-serif;
+    transition: .5s;
+}
+
+a:hover {
+    color: aqua;
+    transition: .5s;
 }
 
 #map {

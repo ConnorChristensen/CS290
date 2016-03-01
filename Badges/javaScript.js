@@ -9,7 +9,6 @@ var desc = "";
 var name = "";
 
 function images() {
-
 	$.ajax({
 			method:"get",
 			async:false,

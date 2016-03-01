@@ -1,8 +1,6 @@
 <?php 
-header('Content-type: application/json;charset=UTF-8');
-?>
-<?php include("_header.php");?>
-<?php
+header('Content-type: application/json;charset=UTF-8'); 
+include("_header.php");
 
 $badge = array();
 

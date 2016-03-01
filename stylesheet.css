@@ -10,6 +10,7 @@ body {
 
 /*Navigation*/
 #header {
+    min-width: 800px;
     z-index: 1;
     width: 100vw;
     height: 70px;
@@ -50,6 +51,7 @@ body {
     width: 100vw;
     height: 97vh;
     min-height: 600px;
+    min-width: 800px;
     margin: 0;
     padding: 0;
     color: white;
@@ -69,6 +71,7 @@ body {
     max-width: 2000px;
 }
 .content {
+    min-width: 800px;
     left: 18%;
     top: 12%;
     width: 60vw;
@@ -112,15 +115,18 @@ body {
     color: white;
     font-family: 'Open Sans';
     font-weight: 400;
-    font-size: 20pt;
+    font-size: 30pt;
 }
 .sub {
-    font-size: 14pt;
+    font-size: 16pt;
 }
 #appexplain {
+    min-width: 800px;
+    height: 90vh;
     background-image: linear-gradient(#0093ff,#65a765);
 }
 #appexplain table {
+    min-width: 800px;
     position: absolute;
     margin: auto;
     width: 80vw;
@@ -138,44 +144,59 @@ body {
 }
 
 
-
-
-/*About Us*/
-#aboutus {
+#inbetween {
     background: url(Images/Mt%20Hood%20at%20Night.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     max-width: 2000px;
-    /*background-image: linear-gradient(#7bc7ff,#65a765);
-    color: black;*/
-    position: relative;
+}
+
+
+
+/*About Us*/
+#aboutus {
+    min-width: 800px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 100;
 }
 
 #pictures {
-    position: absolute;
-    left: 25%;
-    top: 7%;
-    width: 50%;
-    background: rgba(0, 0, 0, 0.2);
+    margin: auto;
+    width: 100%;
+    background-image: linear-gradient(#5d6fd3,#0b220b);
 }
 
-#pictures img {
-    margin-top: 50%;
+.staff img {
+    margin-top: 10px;
+    border-radius: 100px;
     height: 200px;
     width: 200px;
     border: none;
 }
-#pictures td {
-    background: grey;
-}
 .staff {
-    height: 100px;
     width: 100px;
     text-align: center;
 }
 
+.staff p {
+    text-align: left;
+    text-indent: 30px;
+    margin: 0px 20px;
+}
+
+.top {
+    height: 60%;
+    margin: 20px;
+}
+.bottom {
+    height: 30%;
+}
 
 
 /*Screen Resizing*/
@@ -187,6 +208,9 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
+    html {
+    overflow-x: scroll;
+    }
     .sized {
         height: 40vh;
     }
