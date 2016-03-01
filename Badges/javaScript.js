@@ -40,6 +40,8 @@ function get_user_badges() {
 				
 			}
 	});
+	console.log(user_badges);
+	console.log(unlock_dates);
 }
 
 function get_badge(badgeid) {

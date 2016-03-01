@@ -6,7 +6,7 @@ header('Content-type: application/json;charset=UTF-8');
 
 $user_badges = array();
 
-$uid = 1;
+$uid = $_SESSION["uid"];
 
 $sql = "select * from User_Badges where uid='$uid'";
 

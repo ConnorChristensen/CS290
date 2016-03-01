@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php include("_header.php");?>
 <html>
 <html>
 <link rel="stylesheet" href="badge.css">
@@ -10,6 +8,12 @@ session_start();
 
 <script>
     images();
+    get_user_badges();
+    function areYouSure() {
+        if(confirm("Are you sure you want to log out?")) {
+            window.location.href = "http://web.engr.oregonstate.edu/~chriconn/Badges/logout.php";
+        }
+    }
 </script>
 
 <body>
@@ -22,14 +26,14 @@ session_start();
                     <div id="dropDownClicker" onclick="dropDown()">
                        <?php 
                         if(isset($_SESSION["login_user"])){
-                            echo $_SESSION["login_user"];
+                            echo "<p>$_SESSION[login_user]</p>";
                         }
                         ?>
                         <img src="../Images/empty_user.png" alt="">
                     </div>
                     <div class="hiddenDropDown" id="dropDownHolder">
-                        <div class="dropDownThings">account settings</div>
-                        <a class="dropDownThings" href="../index.html">logout</a>
+                        <!--<div class="dropDownThings">account settings</div>-->
+                        <button class="dropDownThings" onclick="areYouSure()">logout</button>
                     </div>
                 </td>
 
