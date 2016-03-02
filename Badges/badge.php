@@ -7,11 +7,9 @@
 </head>
 
 <script>
-    images();
-    get_user_badges();
-    function areYouSure() {
+        function areYouSure() {
         if(confirm("Are you sure you want to log out?")) {
-            window.location.href = "http://web.engr.oregonstate.edu/~chriconn/Badges/logout.php";
+            window.location.href = "http://web.engr.oregonstate.edu/~claytonh/CS290-master/Badges/logout.php";
         }
     }
 </script>
@@ -22,7 +20,6 @@
             <tr>
                 <td id="logo"><img src="../Images/IconWithoutBackground.png"></td>
                 <td id="toMap"><a href="../Map_Page/travel.html">Map</a></td>
-                <td id="toMap"><a href="../Check_in/check.php">Validate Web Inteface</a></td>
                 <td id="dropDown">
                     <div id="dropDownClicker" onclick="dropDown()">
                        <?php 
@@ -52,7 +49,9 @@
     <!--Places the most recently unlocked badge-->
 
     <script>
-        mostRecentBadge();
+    	images();
+		get_user_badges();
+		mostRecentBadge();
     </script>
 
     <div class="modal" id="myModal">
