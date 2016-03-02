@@ -9,6 +9,7 @@ var desc = "";
 var name = "";
 
 function images() {
+
 	$.ajax({
 			method:"get",
 			async:false,
@@ -113,7 +114,14 @@ function badgePopup(badgeNum) {
 //places the badges on the badges page
 function getBadges(){
 	for(i=0; i<badges.length; i++){
-		$("#display").append("<div class='badge' id='myBtn' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
+		if (user_badges[i] == 1) {
+			$("#display").append(" <div class='badge' id='badge' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
+		}
+
+		else {
+			$("#display").append(" <div class='badge' id='badge' onclick='badgePopup("+i+")'><img src=" + '' + "></div>");
+
+		}
 	}	
 }
 
