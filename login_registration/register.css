@@ -1,95 +1,88 @@
-html {
-    overflow-x: hidden;
-}
-
 body{
-    background: linear-gradient(#3ce1ff, #0027c9);
+    background: url(../Images/Bay_Bridge.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 2000px;
     height: 100vh;
+    overflow: hidden;
 }
 
-h1 {
-    padding-top: 1cm;
-    padding-left: 1cm;
-    padding-bottom: .25cm;
-    font-size: 40px;
-    color: black;
-    border-width: thick;
-    font-family: sans-serif;
-    font-weight: 100;
-    width: 100vw;
+h1, h3, input[type=submit], a, .error {
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans';
     text-align: center;
 }
 
-h3 {
-    width: 100vw;
+td {
     text-align: center;
 }
 
-label {
-    padding-bottom: .5cm;
-    padding-left: 1cm;
-    font-family: sans-serif;
-    font-weight: 100;
-    color: black;
+img {
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    height: 70px;
 }
 
 table {
     width: 600px;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(2, 2, 2, 0.63);
+    border-radius: 20px;
+    width: 600px;
+    padding: 10px 10px 5px 10px;
 }
 
 .textBox {
     font-size: 20px;
-    margin: 5px 0;
+    margin: 5px;
+    height: 40px;
     box-sizing: border-box;
-    width: 200px;
-}
-
-#around {
-    margin: auto;
-    background: rgba(2, 2, 2, 0.26);
-    border-radius: 20px;
-    width: 600px;
-    padding: 10px 10px 5px 10px;
-    
-}
-
-.alignRight {
-    text-align: right;
-    margin-right: 10px;
-}
-
-input[type=submit]{
-    margin-left: 1cm;
-    margin-top: 20px;
-    padding: .1cm .5cm;
-    font-size: 15px;
-    color: white;
-    border: none;
-    text-decoration: none;
-    background-color: #ffa907;
-    font-family: sans-serif;
-    font-weight: 100;
-}
-
-img {
-    text-align: center;
-    max-height: 25%;
-    max-width: 25%;
-}
-
-#homebox {
-    width: 100vw;
-    text-align: center;
+    width: 300px;
 }
 
 #home {
-    line-height: 100px;
-    color: black;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-size: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    transition: .5s;
+    width: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#home a {
+    text-align: center;
 }
 
 #home:hover {
-    color: blue;
+    background: #009eac;
+    transition: .5s;
+}
+
+#submit {
+    margin-top: 10px;
+    padding: 10px;
+    width: 200px;
+    font-size: 12pt;
+    color: white;
+    border: none;
+    text-decoration: none;
+    transition: .5s;
+    background-color: rgba(85, 158, 175, 0.7);
+    margin-bottom: 50px;
+}
+
+#submit:hover {
+    background: #009eac;
+    transition: .5s;
 }
