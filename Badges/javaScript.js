@@ -113,7 +113,7 @@ function badgePopup(badgeNum) {
 //places the badges on the badges page
 function getBadges(){
 	for(i=0; i<badges.length; i++){
-		$("#display").append(" <div class='badge' id='myBtn' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
+		$("#display").append("<div class='badge' id='myBtn' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
 	}	
 }
 

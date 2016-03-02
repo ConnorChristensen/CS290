@@ -44,39 +44,42 @@ else {
                 $sessionSet = true;
             } else {
                 $error = "The username or password was incorrect";
-                //header(401);
             }
         }
     }
 }
 ?>
-<!DOCTYPE HTML>
+    <!DOCTYPE HTML>
     <html>
 
     <head>
         <title>Badges Login Page</title>
-        <link rel="stylesheet" href="login.css" />
+        <link rel="stylesheet" href="login.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
+        <img src="../Images/Logo_Name_Combo_White.png" alt="">
+       <div id="register">
+           <a href="register.php">REGISTER HERE</a>
+       </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
             <table>
                 <tr>
                     <td>
-                        <h1>LOGIN HERE:</h1></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>USERNAME:</label>
-                        <input type="text" name="username">
-                        <?php echo $emptyUsername;?>
+                        <h1>LOGIN</h1>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>PASSWORD:</label>
-                        <input type="password" name="password">
-                        <?php echo $emptyPassword;?>
+                        <input type="text" name="username" placeholder="username">
+                        <?php echo("<p>$emptyUsername</p>");?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="password" placeholder="password">
+                        <?php echo("<p>$emptyPassword</p>");?>
                     </td>
                 </tr>
                 <tr>
@@ -87,16 +90,12 @@ else {
                 <tr>
                     <td>
                         <p>
-                            <?php echo $error;?>
-                                <?php if($sessionSet) {
-  echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~chriconn/Badges/badge.php\";</script>";
-                                }?>
+                            <?php 
+                            echo $error;
+                            if($sessionSet) {
+                                echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~chriconn/Badges/badge.php\";</script>";
+                            }?>
                         </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="register.php">REGISTER HERE</a>
                     </td>
                 </tr>
             </table>

@@ -81,6 +81,7 @@ body {
     font-weight: 100;
     position: absolute;
     background: rgba(0, 0, 0, 0.47);
+    border-radius: 20px;
 }
 .TitleSub {
     font-size: 15pt;
@@ -94,6 +95,7 @@ body {
     margin: 10px;
 }
 #button a {
+    border-radius: 5px;
     position: absolute;
     top: 70%;
     left: 43%;
@@ -151,6 +153,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     max-width: 2000px;
+    position: relative;
 }
 
 
@@ -169,7 +172,7 @@ body {
 #pictures {
     margin: auto;
     width: 100%;
-    background-image: linear-gradient(#5d6fd3,#0b220b);
+    background-image: linear-gradient(#0093ff,#65a765);
 }
 
 .staff img {
@@ -208,9 +211,6 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-    html {
-    overflow-x: scroll;
-    }
     .sized {
         height: 40vh;
     }
@@ -225,5 +225,20 @@ body {
     #appexplain img {
         height: 100px;
         border-radius: 30px;
+    }
+    #button a {
+        top: 65%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .sized {
+        height: 80vw;
+    }
+    html {
+        overflow-x: scroll;
+    }
+    #button a {
+        left: 300px;
     }
 }
