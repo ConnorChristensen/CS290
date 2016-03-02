@@ -85,8 +85,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 		}
 	}
 	if($test_name === 1 && $test_email === 1 && $test_pass === 1){
-		$insert = 1;
-		$db->query("insert into Users(username,password,email,admin,created) VALUES ('{$user_name}','{$pass1}','{$email}','0',NOW())");
+			$insert = 1;
+
+			if (!$db->query("insert into Users(username,password,email,admin_status,date_created) VALUES ('{$user_name}','{$pass1}','{$email}','0',NOW())")) {
+				printf("Error: %s\n", $db->error);
+			}
+
         $_SESSION["login_user"] = $user_name;
 	}
 }
@@ -150,6 +154,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 					$uid = $obj->uid;
 					//echo "<br>UID: $uid<br>";   //check uid
 				}
+			}
+
+			for ($i = 1; $i <= 20; $i++) {
+					$db->query("insert into User_Badges(badgeid, uid, obtained, unlocked) VALUES ('$i','$uid',NOW(),'0')");
 			}
 		}
 		$_SESSION["uid"] = "$uid"; //automatically set session when user registers

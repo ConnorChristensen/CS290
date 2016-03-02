@@ -35,7 +35,12 @@ else {
             $query = mysqli_query($connect,"SELECT * FROM Users WHERE password = '$password' AND username = '$username'");
             $rows = mysqli_num_rows($query);
             if ($rows == 1) {
+                $sql = "select uid from Users where username='$username'";
+				$result = mysqli_query($connect, $sql);
+				$row = mysqli_fetch_array($result);
+				$uid = $row['uid'];
                 $_SESSION["login_user"] = $username;
+                $_SESSION["uid"] = $uid;
                 $sessionSet = true;
             } else {
                 $error = "The username or password was incorrect";
