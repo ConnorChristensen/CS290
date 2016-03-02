@@ -60,6 +60,8 @@ function begin() {
     drop(map, markers);
 }
 
+//Current measurement in feet
+
 function setMarkers() {
     var markers = [
         ['OSU',                             44.563036,      -123.281925],

@@ -96,3 +96,9 @@ table {
     background: #009eac;
     transition: .5s;
 }
+
+@media screen and (max-width: 1200px) {
+    table {
+        width: 500px;
+    }
+}

@@ -28,7 +28,7 @@ img {
 }
 
 table {
-    width: 600px;
+    width: 40vw;
     position: absolute;
     top: 25%;
     left: 0;
@@ -36,7 +36,6 @@ table {
     margin: auto;
     background: rgba(2, 2, 2, 0.63);
     border-radius: 20px;
-    width: 600px;
     padding: 10px 10px 5px 10px;
 }
 
@@ -85,4 +84,10 @@ table {
 #submit:hover {
     background: #009eac;
     transition: .5s;
+}
+
+@media screen and (max-width: 1200px) {
+    table {
+        width: 500px;
+    }
 }
