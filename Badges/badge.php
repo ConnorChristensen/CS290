@@ -20,6 +20,7 @@
             <tr>
                 <td id="logo"><img src="../Images/IconWithoutBackground.png"></td>
                 <td id="toMap"><a href="../Map_Page/travel.html">Map</a></td>
+                <td id="toMap"><a href="../Check_in/check.php">Validate My Location</a></td>
                 <td id="dropDown">
                     <div id="dropDownClicker" onclick="dropDown()">
                        <?php 
