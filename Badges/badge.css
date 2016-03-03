@@ -122,11 +122,29 @@ table img {
     text-align: center;
     line-height: 100px;
 }
+
+.lockedBadge {
+    height: 10vw;
+    width: 10vw;
+    display: inline-block;
+    border-radius: 100px;
+    margin: 1vw;
+    min-width: 100px;
+    min-height: 100px;
+    overflow: hidden;
+    background: black;
+}
+
+.lockedBadge img {
+    height: 100%;
+    width: 100%;
+    opacity: .2;
+}
+
 .badge {
     height: 10vw;
     width: 10vw;
     display: inline-block;
-    background: grey;
     border-radius: 100px;
     margin: 1vw;
     min-width: 100px;

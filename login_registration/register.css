@@ -34,7 +34,7 @@ table {
     left: 0;
     right: 0;
     margin: auto;
-    background: rgba(2, 2, 2, 0.63);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
     padding: 10px 10px 5px 10px;
 }
@@ -48,7 +48,7 @@ table {
 }
 
 #home {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(78, 78, 78, 0.6);
     padding: 20px;
     transition: .5s;
     width: 200px;
@@ -88,6 +88,6 @@ table {
 
 @media screen and (max-width: 1200px) {
     table {
-        width: 500px;
+        width: 480px;
     }
 }

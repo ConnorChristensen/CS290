@@ -72,7 +72,9 @@ body {
 }
 .content {
     min-width: 800px;
-    left: 18%;
+    left: 0;
+    right: 0;
+    margin: auto;
     top: 12%;
     width: 60vw;
     text-align: center;
@@ -216,7 +218,8 @@ body {
     }
     .content {
         width: 100vw;
-        left: 0px;        
+        left: 0px;
+        border-radius: 0px;
     }
     #appexplain table {
         width: 100vw;
@@ -229,9 +232,13 @@ body {
     #button a {
         top: 65%;
     }
+    #inbetween div {
+        top: 0px;
+        height: 100%;
+    }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .sized {
         height: 80vw;
     }
@@ -240,5 +247,8 @@ body {
     }
     #button a {
         left: 300px;
+    }
+    #inbetween .TitleSub {
+        line-height: 30px;
     }
 }

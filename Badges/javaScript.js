@@ -97,7 +97,7 @@ function mostRecentBadge(){
 		badge = badges[idx];
 	}
 
-	$("#recentBadge").append("<div  class='badge'><img src="+badge+"></div>");
+	$("#recentBadge").append("<div class='badge'><img src="+badge+"></div>");
 }
 
 //makes the popup for the badge turn on
@@ -123,11 +123,10 @@ function badgePopup(badgeNum) {
 function getBadges(){
 	for(i=0; i<badges.length; i++){
 		if (user_badges[i] == 1) {
-			$("#display").append(" <div class='badge' id='badge' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
+			$("#display").append(" <div class='badge' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
 		}
-
 		else {
-			$("#display").append(" <div class='badge' id='badge' onclick='badgePopup("+i+")'><img src=" + '' + "></div>");
+			$("#display").append("<div class='lockedBadge' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
 
 		}
 	}	

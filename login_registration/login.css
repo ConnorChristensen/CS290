@@ -23,11 +23,6 @@ h1 {
     border-width: thick;
 }
 
-label {
-    padding-bottom: .5cm;
-    padding-left: 1cm;
-}
-
 input[type=text], input[type=password] {
     font-size: 20px;
     height: 40px;
@@ -66,7 +61,7 @@ a {
 }
 
 table {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.65);
     width: 40vw;
     margin: auto;
     text-align: center;
@@ -99,6 +94,6 @@ table {
 
 @media screen and (max-width: 1200px) {
     table {
-        width: 500px;
+        width: 480px;
     }
 }
