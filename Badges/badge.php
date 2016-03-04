@@ -9,7 +9,7 @@
 <script>
         function areYouSure() {
         if(confirm("Are you sure you want to log out?")) {
-            window.location.href = "http://web.engr.oregonstate.edu/~claytonh/CS290-master/Badges/logout.php";
+            window.location.href = "http://web.engr.oregonstate.edu/~chriconn/Badges/logout.php";
         }
     }
 </script>
