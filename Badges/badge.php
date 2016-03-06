@@ -6,6 +6,14 @@
 <script src="javaScript.js"></script>
 </head>
 
+<?php 
+	if (!isset($_SESSION["uid"]) || $_SESSION["uid"] == '') {
+		echo '<meta http-equiv="refresh" content="0;url=http://web.engr.oregonstate.edu/~chriconn"/>';
+		exit;
+	}
+?>
+
+
 <script>
         function areYouSure() {
         if(confirm("Are you sure you want to log out?")) {
