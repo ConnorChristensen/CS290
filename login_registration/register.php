@@ -87,9 +87,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 		}
 	}
 	if($test_name === 1 && $test_email === 1 && $test_pass === 1){
-        $admin = 0;
-        if($stmt=$db->prepare("INSERT INTO Users (username,password,email,admin_status,date_created) VALUES (?,?,?,?,NOW())")){
-            $stmt->bind_param('sssi',$user_name,$pass1,$email,$admin);
+        if($stmt=$db->prepare("INSERT INTO Users (username,password,email,admin_status,date_created) VALUES (?,?,?,0,NOW())")){
+            $stmt->bind_param('sss',$user_name,$pass1,$email);
             $stmt->execute();
             $_SESSION["login_user"] = $user_name;
             $insert=1;
