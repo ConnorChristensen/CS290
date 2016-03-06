@@ -15,7 +15,7 @@
 </script>
     <?php
     if(!isset($_SESSION["uid"])){
-       echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~claytonh/CS290-master/login_registration/login.php\";</script>";
+       echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~chriconn/login_registration/login.php\";</script>";
     }
 ?>
 
