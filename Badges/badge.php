@@ -8,7 +8,7 @@
     </head>
 
 <?php 
-	if (!isset($_SESSION["uid"]) || $_SESSION["uid"] == '') {
+	if (!isset($_SESSION["uid"])) {
 		echo '<meta http-equiv="refresh" content="0;url=http://web.engr.oregonstate.edu/~chriconn"/>';
 		exit;
 	}
