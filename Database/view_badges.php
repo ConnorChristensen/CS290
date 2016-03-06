@@ -1,5 +1,5 @@
 // looks awful right now, but it works. view @ https://web.engr.oregonstate.edu/~claytonh/cs290/view_badges.php
-<script src="jquery-1.12.0.min.js"></script>
+<script src="../javascript/jquery-1.12.0.min.js"></script>
 <h1>Badges</h1>
 
 <table class='badges'><tr><th>Badge<th>Name<th>Description<th>Date added</tr>
