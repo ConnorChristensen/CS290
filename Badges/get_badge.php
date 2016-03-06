@@ -1,7 +1,7 @@
 <?php 
 header('Content-type: application/json;charset=UTF-8');
 
-include("main/_header.php");
+include("../_header.php");
 
 $badge = array();
 
