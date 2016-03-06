@@ -15,8 +15,7 @@
 </script>
     <?php
     if(!isset($_SESSION["uid"])){
-        echo "Session is not set";
-        //change to redirect to location
+       echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~claytonh/CS290-master/login_registration/login.php\";</script>";
     }
 ?>
 
