@@ -2,8 +2,9 @@
     <html>
     <head>
     <link rel="stylesheet" href="badge.css">
-    <script src="../javascript/jquery-1.12.0.min.js"></script>
-    <script src="../javascript/javaScript.js"></script>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script src="javaScript.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     </head>
     <script>
         function areYouSure() {
