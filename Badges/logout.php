@@ -4,8 +4,9 @@
 <a href="../index.html">HOME</a>
 
 <?php
+    session_set();
     session_destroy();
 ?>
-<meta http-equiv="refresh" content="3;url=http://web.engr.oregonstate.edu/~chriconn/index.html"/>
+<meta http-equiv="refresh" content="0;url=http://web.engr.oregonstate.edu/~chriconn/index.html"/>
 
 </html>
