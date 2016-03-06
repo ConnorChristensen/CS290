@@ -1,0 +1,32 @@
+body{
+    background: url(../Images/Mt%20Hood%20at%20Night.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 2000px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1{
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 30pt;
+    text-align: center;
+    padding-top: 1cm;
+    border-width: thick;
+}
+
+a{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+
+}
