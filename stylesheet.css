@@ -84,6 +84,7 @@ body {
     position: absolute;
     background: rgba(0, 0, 0, 0.47);
     border-radius: 20px;
+    transition: 0s;
 }
 .TitleSub {
     font-size: 15pt;
@@ -96,18 +97,22 @@ body {
     font-size: 50pt;
     margin: 10px;
 }
-#button a {
+
+#button {
     border-radius: 5px;
     position: absolute;
     top: 70%;
-    left: 43%;
+    left: 0;
+    right: 0;
+    width: 200px;
+    margin: auto;
+    text-align: center;
     background: rgba(0, 0, 0, 0.47);
     padding: 10px 10px;
-    transition: .5s;
     text-decoration: none;
     color: white;
 }
-#button a:hover {
+#button:hover {
     background: #009eac;
     transition: .5s;
 }
@@ -158,6 +163,10 @@ body {
     position: relative;
 }
 
+#inbetween div {
+    height: 80%;
+}
+
 /*About Us*/
 #aboutus {
     min-width: 800px;
@@ -203,13 +212,6 @@ body {
 
 
 /*Screen Resizing*/
-@media screen and (max-width: 1400px) {
-    #pictures {
-        width: 100%;
-        left: 0;
-    }
-}
-
 @media screen and (max-width: 1000px) {
     .sized {
         height: 40vh;
@@ -227,12 +229,12 @@ body {
         height: 100px;
         border-radius: 30px;
     }
-    #button a {
-        top: 65%;
+    #button {
+        top: 3%;
     }
     #inbetween div {
-        top: 0px;
         height: 100%;
+        top: 0;
     }
 }
 
@@ -243,10 +245,17 @@ body {
     html {
         overflow-x: scroll;
     }
-    #button a {
-        left: 300px;
-    }
     #inbetween .TitleSub {
         line-height: 30px;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    #inbetween div {
+        height: 100%;
+        top: 0;
+    }
+    #button {
+        top: 3%;
     }
 }

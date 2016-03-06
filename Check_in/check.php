@@ -37,7 +37,7 @@ $con = mysqli_connect('oniddb.cws.oregonstate.edu','buffumw-db','PizSfykTJBUp3Nb
                 "<br>Longitude: " + position.coords.longitude;
         }
     </script>
-
+    <a href="../Badges/badge.php">Back To Badges Page</a>
 </body>
 
 </html>
