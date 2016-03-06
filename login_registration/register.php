@@ -8,7 +8,7 @@ session_start();
         <link rel="stylesheet" type="text/css" href="./register.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
         <?php
-include "main/_header.php";
+include "_header.php";
 if($db = connect_db()){$test_db = 1;}else{$test_db = 0;}
 
 //variables
@@ -86,13 +86,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 		}
 	}
 	if($test_name === 1 && $test_email === 1 && $test_pass === 1){
-			$insert = 1;
-
-			if (!$db->query("insert into Users(username,password,email,admin_status,date_created) VALUES ('{$user_name}','{$pass1}','{$email}','0',NOW())")) {
-				printf("Error: %s\n", $db->error);
-			}
-
-        $_SESSION["login_user"] = $user_name;
+        $admin = 0;
+        if($stmt=$db->prepare("INSERT INTO Users (username,password,email,admin_status,date_created) VALUES (?,?,?,?,NOW())")){
+            $stmt->bind_param('sssi',$user_name,$pass1,$email,$admin);
+            $stmt->execute();
+            $_SESSION["login_user"] = $user_name;
+            $insert=1;
+        }else{
+            $insert=0;
+        }
 	}
 }
 
