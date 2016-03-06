@@ -1,9 +1,10 @@
 <?php include("main/_header.php");?>
+<?php include("main/javascript/jquery-1.12.0.min.js"); ?>
+<?php include("main/javascript/javaScript.js"); ?>
     <html>
     <html>
     <link rel="stylesheet" href="badge.css">
-    <script src="jquery-1.12.0.min.js"></script>
-    <script src="javaScript.js"></script>
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     </head>
 
