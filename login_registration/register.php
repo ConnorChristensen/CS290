@@ -8,7 +8,7 @@ session_start();
         <link rel="stylesheet" type="text/css" href="./register.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
         <?php
-include "_header.php";
+include "main/_header.php";
 if($db = connect_db()){$test_db = 1;}else{$test_db = 0;}
 
 //variables
