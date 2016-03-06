@@ -1,7 +1,7 @@
 <?php 
 header('Content-type: application/json;charset=UTF-8');
 ?>
-<?php include("_header.php");?>
+<?php include("main/_header.php");?>
 <?php
 # I'm assuming the session variable for their id is called this.
 //$uid = $_SESSION['uid'];
