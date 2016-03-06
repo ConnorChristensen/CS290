@@ -1,3 +1,4 @@
+<?php include("main/_header.php");?>
 <?php
 if(!isset($_COOKIE["login_user"])) { //If the session is not set
     session_start();    //Start the session
