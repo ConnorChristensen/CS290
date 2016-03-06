@@ -8,7 +8,7 @@ $con = mysqli_connect('oniddb.cws.oregonstate.edu','buffumw-db','PizSfykTJBUp3Nb
 
 <head>
     <link rel="stylesheet" href="check.css">
-    <script src="check.js"></script>
+    <script type="text/javascript" src="../javascript/check.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     <title>check</title>
 </head>

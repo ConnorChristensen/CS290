@@ -88,7 +88,7 @@ else {
                             <?php 
                             echo $error;
                             if($sessionSet) {
-                                echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~chriconn/Badges/badge.php\";</script>";
+                                echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~rosenber/Badges/badge.php\";</script>";
                             }?>
                         </p>
                     </td>

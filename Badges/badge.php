@@ -2,14 +2,14 @@
     <html>
     <head>
     <link rel="stylesheet" href="badge.css">
-    <script src="jquery-1.12.0.min.js"></script>
-    <script src="javaScript.js"></script>
+    <script type="text/javascript" src="../javascript/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="../javascript/javaScript.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     </head>
     <script>
         function areYouSure() {
         if(confirm("Are you sure you want to log out?")) {
-            window.location.href = "http://web.engr.oregonstate.edu/~chriconn/Badges/logout.php";
+            window.location.href = "http://web.engr.oregonstate.edu/~rosenber/Badges/logout.php";
         }
     }
 </script>

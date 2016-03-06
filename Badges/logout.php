@@ -4,9 +4,8 @@
 
 <?php
     session_set();
-    unset($_SESSION["uid"]);
     session_destroy();
 ?>
-<meta http-equiv="refresh" content="2;url=http://web.engr.oregonstate.edu/~chriconn/index.html"/>
+<meta http-equiv="refresh" content="2;url=http://web.engr.oregonstate.edu/~rosenber/index.html"/>
 
 </html>
