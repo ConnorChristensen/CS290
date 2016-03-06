@@ -2,8 +2,8 @@
     <html>
     <head>
     <link rel="stylesheet" href="badge.css">
-    <script src="jquery-1.12.0.min.js"></script>
-    <script src="javaScript.js"></script>
+    <script type="text/javascript" src="../javascript/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="../javascript/javaScript.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     </head>
     <script>
@@ -15,7 +15,8 @@
 </script>
     <?php
     if(!isset($_SESSION["uid"])){
-       echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~chriconn/login_registration/login.php\";</script>";
+        echo "Session is not set";
+        //change to redirect to location
     }
 ?>
 
