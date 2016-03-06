@@ -7,8 +7,8 @@ body {
     margin-left: 0px;
     margin-top: 0px;
 }
-h1, h3 {
-    font-family: sans-serif;
+h1, h3, p, a {
+    font-family: 'Open Sans';
     font-weight: 100;
 }
 
@@ -21,7 +21,7 @@ h1, h3 {
 nav {
     width: 100vw;
     height: 100px;
-    position: relative;
+    position: absolute;
     margin-left: 0px;
     border-bottom: 1px solid grey;
     margin: 0px;
@@ -56,7 +56,6 @@ table img {
 #toMap a {
     text-decoration: none;
     color: white;
-    font-family: sans-serif;
     font-size: 14pt;
 }
 
@@ -99,15 +98,24 @@ table img {
 
 /*------------Banner------------*/
 #banner {
-    height: 700px;
+    height: 90vh;
     width: 100vw;
-    background-image: linear-gradient(#ffffff,#2477cb);
-    margin-top: -40px;
+    background: url(../Images/Old%20House.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 2000px;
     text-align: center;
 }
 #recentBadge {
-    width: 100vw; 
-    margin-top: 200px
+    background: rgba(0, 0, 0, 0.46);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 30%;
+    color: white;
 }
 
 
@@ -115,11 +123,13 @@ table img {
 /*------------Badges------------*/
 #badges {
     height: 100vh;
-    background: #ffffff;
+    /*background-image: linear-gradient(#909cb2,#636d6d);*/
+    background-image: linear-gradient(#0093ff,#41953a);
     margin-top: -30px;
 }
 #badges h1 {
     text-align: center;
+    color: white;
     line-height: 100px;
 }
 
@@ -177,7 +187,7 @@ table img {
     width: 100vw; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
+    /*background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modal-content {
@@ -185,5 +195,5 @@ table img {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60vw; /* Could be more or less, depending on screen size */
 }
