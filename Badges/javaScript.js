@@ -9,6 +9,7 @@ var desc = "";
 var name = "";
 
 function images() {
+
 	$.ajax({
 			method:"get",
 			async:false,
@@ -40,6 +41,8 @@ function get_user_badges() {
 				
 			}
 	});
+	console.log(user_badges);
+	console.log(unlock_dates);
 }
 
 function get_badge(badgeid) {
@@ -74,19 +77,27 @@ function mostRecentBadge(){
 	//get the most recent badge, example in here now
 	var badge = 0;
 	var idx = 0;
+	var x = 0; //in case they have no badges
 
+	console.log(unlock_dates.length);
 	for (var i = 1; i < unlock_dates.length; i++) {
 		if (user_badges[i] == 1) {
-			if (Date.parse(unlock_dates[i]) > Date.parse(unlock_dates[i - 1])) {
-				console.log(Date.parse(unlock_dates[i]));
+			x = 1;
+			var tmp = unlock_dates[i].split(/[- :]/);
+			var d1 = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
+			tmp = unlock_dates[i - 1].split(/[- :]/);
+			var d2 = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
+			if (d1 > d2) {
 				idx = i;		
 			}
 		}
 	}
 	
-	badge = badges[idx];
+	if (x == 1) {
+		badge = badges[idx];
+	}
 
-	$("#recentBadge").append("<div  class='badge'><img src="+badge+"></div>");
+	$("#recentBadge").append("<div class='badge'><img src="+badge+"></div>");
 }
 
 //makes the popup for the badge turn on
@@ -96,7 +107,7 @@ function badgePopup(badgeNum) {
 
 	if (user_badges[badgeNum] == 1) {
 		get_badge(badgeNum + 1);
-		$("#myModalContent").append("<h1>"+name+"</h1>"+desc+"<br><h2>DATE UNLOCKED</h2>"+unlock_dates[badgeNum]+"<br>");
+		$("#myModalContent").append("<center><img src="+badges[badgeNum]+" height=200 width=200><br><h1>"+name+"</h1>"+desc+"<br><h3>Date Unlocked</h3>"+unlock_dates[badgeNum]+"<br>");
 	}
 
 	else {
@@ -111,7 +122,13 @@ function badgePopup(badgeNum) {
 //places the badges on the badges page
 function getBadges(){
 	for(i=0; i<badges.length; i++){
-		$("#display").append(" <div class='badge' id='myBtn' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
+		if (user_badges[i] == 1) {
+			$("#display").append(" <div class='badge' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
+		}
+		else {
+			$("#display").append("<div class='lockedBadge' onclick='badgePopup("+i+")'><img src=" + badges[i] + "></div>");
+
+		}
 	}	
 }
 

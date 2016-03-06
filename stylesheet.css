@@ -1,7 +1,6 @@
 /*Global*/
 html {
     overflow-x: hidden;
-    min-width: 700px;
 }
 body {
     margin: 0px;
@@ -11,6 +10,7 @@ body {
 
 /*Navigation*/
 #header {
+    min-width: 800px;
     z-index: 1;
     width: 100vw;
     height: 70px;
@@ -34,7 +34,8 @@ body {
     margin-top: 15px;
     color: white;
     text-decoration: none;
-    font-family: sans-serif;
+    font-family: 'Open Sans';
+    font-weight: 100;
     width: 100px;
     transition: .5s;
 }
@@ -48,7 +49,9 @@ body {
 /*Windows*/
 .sized {
     width: 100vw;
-    height: 90vh;
+    height: 97vh;
+    min-height: 600px;
+    min-width: 800px;
     margin: 0;
     padding: 0;
     color: white;
@@ -68,16 +71,20 @@ body {
     max-width: 2000px;
 }
 .content {
-    left: 15%;
+    min-width: 800px;
+    left: 0;
+    right: 0;
+    margin: auto;
     top: 12%;
     width: 60vw;
-    min-width: 1000px;
     text-align: center;
     color: white;
     font-family: 'Open Sans';
     font-weight: 100;
     position: absolute;
     background: rgba(0, 0, 0, 0.47);
+    border-radius: 20px;
+    transition: 0s;
 }
 .TitleSub {
     font-size: 15pt;
@@ -91,6 +98,24 @@ body {
     margin: 10px;
 }
 
+#button {
+    border-radius: 5px;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.47);
+    padding: 10px 10px;
+    text-decoration: none;
+    color: white;
+}
+#button:hover {
+    background: #009eac;
+    transition: .5s;
+}
 
 
 /*App Explain*/
@@ -99,15 +124,18 @@ body {
     color: white;
     font-family: 'Open Sans';
     font-weight: 400;
-    font-size: 20pt;
+    font-size: 30pt;
 }
 .sub {
-    font-size: 14pt;
+    font-size: 16pt;
 }
 #appexplain {
+    min-width: 800px;
+    height: 90vh;
     background-image: linear-gradient(#0093ff,#65a765);
 }
 #appexplain table {
+    min-width: 800px;
     position: absolute;
     margin: auto;
     width: 80vw;
@@ -125,46 +153,109 @@ body {
 }
 
 
+#inbetween {
+    background: url(Images/Mt%20Hood%20at%20Night.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 2000px;
+    position: relative;
+}
 
+#inbetween div {
+    height: 80%;
+}
 
 /*About Us*/
 #aboutus {
-    background: #2e962e;
+    min-width: 800px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 100;
 }
 
 #pictures {
+    margin: auto;
+    width: 100%;
+    background-image: linear-gradient(#0093ff,#65a765);
+}
+
+.staff img {
+    margin-top: 10px;
+    border-radius: 100px;
     height: 200px;
     width: 200px;
-    margin-top: 50%;
-    margin: auto;
+    border: none;
 }
-#pictures thead {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-#pictures td {
-    text-align: center;
-    height: 65px;
+.staff {
     width: 100px;
-    border-radius: 100px;
-    background: grey;
+    text-align: center;
 }
 
+.staff p {
+    text-align: left;
+    text-indent: 30px;
+    margin: 0px 20px;
+}
 
-
-
-/*Links*/
-#links {
-    background: #c04cd0;
-    height: 200px;
-    text-align: center;
+.top {
+    height: 60%;
+    margin: 20px;
+}
+.bottom {
+    height: 30%;
 }
 
 
 /*Screen Resizing*/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
+    .sized {
+        height: 40vh;
+    }
+    .content {
+        width: 100vw;
+        left: 0px;
+        border-radius: 0px;
+    }
+    #appexplain table {
+        width: 100vw;
+        left: 0px;
+    }
+    #appexplain img {
+        height: 100px;
+        border-radius: 30px;
+    }
+    #button {
+        top: 3%;
+    }
+    #inbetween div {
+        height: 100%;
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .sized {
+        height: 80vw;
+    }
     html {
         overflow-x: scroll;
+    }
+    #inbetween .TitleSub {
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    #inbetween div {
+        height: 100%;
+        top: 0;
+    }
+    #button {
+        top: 3%;
     }
 }

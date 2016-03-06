@@ -5,6 +5,22 @@
     <link type="text/css" rel="stylesheet" href="stylesheet.css" />
     <title>Welcome</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <script>
+        $(function () {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -28,6 +44,7 @@
             <p class="TitleBanner">UNLOCK THE WORLD</p>
             <p class="TitleSub">Geo is a travel companion to keep track of all the wonderful places you have been and will be your guide to the next great thing. If you travel to a cool place thats on our list, Geo will give you a badge for having traveled there, so you can log in at any time and see a list of badges you have unlocked.</p>
         </div>
+        <a id="button" href="Map_Page/showcase.html">See Our Location Maps</a>
     </div>
     <div class="sized" id="appexplain">
         <table>
@@ -37,8 +54,7 @@
             <tr>
                 <td><img src="Images/logo.png" alt=""></td>
                 <td>
-                    <p class="sub">We don’t expect you to carry your laptop on your hike up half-dome or need you to have a WiFi connection on your drive through Montana. Thats why we built an iPhone app to work with this website. Download the free app through the app store, log in, and you are good to go. Anytime you are within range of a badge, just press the <em>“validate my location"</em> button and we will take care of the rest.</p>
-                    <p class="sub" style="text-align: center">(Currently only available on iPhone)</p>
+                    <p class="sub">We don’t expect you to carry your laptop on your hike up half-dome or need you to have a WiFi connection on your drive through Montana. Thats why we built an iPhone app to work with this website. Download the free app through the app store, log in, and you are good to go. Anytime you are within range of a badge, just press the <em>“validate my location"</em> button and we will take care of the rest. We are in the proccess of developing an Android app as well, so everyone can participate.</p>
                 </td>
             </tr>
             <tr>
@@ -47,31 +63,59 @@
             </tr>
         </table>
     </div>
-
-    <table class="sized" id="aboutus">
-        <tr>
-            <td>
-                <table id="pictures">
-                    <th colspan="3">Who we are</th>
-                    <tr>
-                        <td>connor</td>
-                        <td>lily</td>
-                        <td>billy</td>
-                    </tr>
-                    <tr>
-                        <td>heidi</td>
-                        <td>robert</td>
-                        <td>ian</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <p>This text box will explain who we are and why we wrote this</p>
-            </td>
-        </tr>
-    </table>
-    <div id="links">
-        <p>These are links to things</p>
+    <div class="sized" id="inbetween">
+        <div class="content">
+            <p class="TitleBanner">BADGES</p>
+            <p class="TitleSub">While our badges are not globally reaching, we continue to add new ones on a regular basis. Some badges will be digitally drawn by Connor, Lily and Robert, while the majority of badges will be the highest quality photographs of the location we can get.</p>
+            <img src="Images/badgePics/oregon_badge.png" alt="">
+        </div>
+    </div>
+    <div id="aboutus">
+        <table id="pictures">
+            <th colspan="3" style="font-size:30pt; font-weight: 100">Who we are</th>
+            <tr>
+                <td class="staff">
+                    <div class="top">
+                        <img src="Images/creators/robert.jpg" alt="Billy">
+                    </div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsam qui voluptate at nihil, et incidunt nulla ipsum obcaecati hic dicta non distinctio repellendus.</p>
+                    </div>
+                </td>
+                <td class="staff">
+                   <div class="top"><img src="Images/creators/connor.jpeg" alt="Connor"></div>
+                   <div class="bottom"><p>Hello, I'm Connor. I put most of my effort into design of the website and the building of the iPhone app. Most of my development was in PHP, HTML, CSS, JavaScript and Swift.</p></div>
+                </td>
+                <td class="staff">
+                    <div class="top">
+                        <img src="Images/creators/lily.jpg" alt="Heidi">
+                    </div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti obcaecati exercitationem quod non magni possimus laudantium culpa ad asperiores nulla similique ab modi, distinctio iusto maxime!</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="staff">
+                    <div class="top"><img src="Images/empty_user.png" alt="Robert"></div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae deleniti sapiente adipisci, quod perspiciatis, consectetur assumenda veritatis vero tempora libero nam unde non.</p>
+                    </div>
+                </td>
+                <td class="staff">
+                    <div class="top"><img src="Images/empty_user.png" alt="Lily"></div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste vitae, harum dolores! Doloremque cupiditate sit veritatis hic id doloribus, dignissimos aut obcaecati.</p>
+                    </div>
+                </td>
+                <td class="staff">
+                    <div class="top"><img src="Images/empty_user.png" alt="ian"></div>
+                    <div class="bottom">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolorem est non at nemo assumenda expedita aspernatur eaque asperiores? Velit assumenda facere maiores.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 
