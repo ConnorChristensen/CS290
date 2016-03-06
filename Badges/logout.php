@@ -6,6 +6,6 @@
     session_set();
     session_destroy();
 ?>
-<meta http-equiv="refresh" content="2;url=http://web.engr.oregonstate.edu/~rosenber/index.html"/>
+<meta http-equiv="refresh" content="2;url=http://web.engr.oregonstate.edu/~chriconn/index.html"/>
 
 </html>
