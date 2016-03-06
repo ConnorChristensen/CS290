@@ -1,6 +1,11 @@
 <html>
-<h1>Logout Successful</h1>
-<a href="../index.html">HOME</a>
+<link rel="stylesheet" type="text/css" href="./logout.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+
+<div id="container">
+    <h1>Logout Successful</h1>
+    <a href="../index.html">Redirect in 3 seconds</a>
+</div>
 
 <?php
     session_set();
