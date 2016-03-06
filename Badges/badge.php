@@ -1,6 +1,6 @@
 <?php include("../_header.php");?>
 <html>
-<html>
+<head>
 <link rel="stylesheet" href="badge.css">
 <script src="jquery-1.12.0.min.js"></script>
 <script src="javaScript.js"></script>
@@ -9,22 +9,10 @@
 <script>
         function areYouSure() {
         if(confirm("Are you sure you want to log out?")) {
-            <?php 
-                session_destroy();
-            ?>
             window.location.href = "http://web.engr.oregonstate.edu/~chriconn/Badges/logout.php";
         }
     }
 </script>
-<?php
-    if(!isset($_SESSION["uid"])){
-        echo "Session is not set";
-        //change to redirect to location
-    }else{
-        echo "Session is set";
-        //don't do anything
-    }
-?>
 
 <body>
     <nav>
