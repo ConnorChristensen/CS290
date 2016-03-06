@@ -1,12 +1,6 @@
-<?php include("../_header.php");?>
-<?php
-if(!isset($_COOKIE["login_user"])) { //If the session is not set
-    session_start();    //Start the session
-}
-else {
-    echo "It looks like you are already logged in. Would you like to log in as a different user?";
-}
-$emptyUsername = $emptyPassword = "";
+<?php include("../_header.php");
+$emptyUsername = $emptyPassword = $error = "";
+$sessionSet = false;
 // Create connection
 $connect = mysqli_connect('oniddb.cws.oregonstate.edu','buffumw-db','PizSfykTJBUp3NbW','buffumw-db');
 
@@ -64,7 +58,7 @@ else {
        <div id="register">
            <a href="register.php">REGISTER HERE</a>
        </div>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <table>
                 <tr>
                     <td>
