@@ -1,4 +1,4 @@
-<?php include("main/_header.php");?>
+<?php include("../_header.php");?>
 <html>
 <html>
 <link rel="stylesheet" href="badge.css">
