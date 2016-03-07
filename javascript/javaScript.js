@@ -74,25 +74,27 @@ function get_badge(badgeid) {
 
 //places the most recently found badge where called
 function mostRecentBadge(){
-	//get the most recent badge, example in here now
 	var badge = 0;
 	var idx = 0;
 	var x = 0; //in case they have no badges
+	
+	var tmp = unlock_dates[0].split(/[- :]/);
+	var newest = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
 
 	console.log(unlock_dates.length);
-	for (i = 0; i < unlock_dates.length - 1; i++) {
+	for (i = 0; i < unlock_dates.length; i++) {
+		console.log(user_badges[i]);
 		if (user_badges[i] == 1) {
 			x = 1;
 			var tmp = unlock_dates[i].split(/[- :]/);
-			var d1 = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
-			tmp = unlock_dates[i + 1].split(/[- :]/);
-			var d2 = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
-			if (d1 > d2) {
-				idx = i;		
+			var cur = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
+			if (cur > newest) {
+				idx = i;
+				newest = cur;		
 			}
 		}
 	}
-	
+
 	if (x == 1) {
 		badge = badges[idx];
 	}
