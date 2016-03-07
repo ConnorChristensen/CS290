@@ -80,12 +80,12 @@ function mostRecentBadge(){
 	var x = 0; //in case they have no badges
 
 	console.log(unlock_dates.length);
-	for (var i = 1; i < unlock_dates.length; i++) {
+	for (i = 0; i < unlock_dates.length - 1; i++) {
 		if (user_badges[i] == 1) {
 			x = 1;
 			var tmp = unlock_dates[i].split(/[- :]/);
 			var d1 = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
-			tmp = unlock_dates[i - 1].split(/[- :]/);
+			tmp = unlock_dates[i + 1].split(/[- :]/);
 			var d2 = new Date(tmp[0], tmp[1] - 1, tmp[2], tmp[3], tmp[4], tmp[5]);
 			if (d1 > d2) {
 				idx = i;		
