@@ -8,7 +8,7 @@
 </div>
 
 <?php
-    session_set();
+    session_start();
     session_destroy();
 ?>
 <meta http-equiv="refresh" content="2;url=http://web.engr.oregonstate.edu/~chriconn/index.html"/>
