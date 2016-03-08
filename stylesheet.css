@@ -1,6 +1,7 @@
 /*Global*/
 html {
     overflow-x: hidden;
+    background: black;
 }
 body {
     margin: 0px;
@@ -59,7 +60,10 @@ body {
     font-weight: 100;
 }
 
-
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
 /*First div*/
 #banner {
@@ -69,6 +73,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     max-width: 2000px;
+    animation: fadein .5s;
 }
 .content {
     min-width: 800px;
@@ -161,6 +166,7 @@ body {
     background-size: cover;
     max-width: 2000px;
     position: relative;
+    animation: fadein .5s;
 }
 
 #inbetween div {
@@ -256,6 +262,9 @@ body {
         top: 0;
     }
     #button {
-        top: 3%;
+        top: 25px;
+    }
+    #banner .content {
+        top: 95px;
     }
 }

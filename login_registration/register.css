@@ -1,3 +1,8 @@
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 body{
     background: url(../Images/Bay_Bridge.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -7,7 +12,9 @@ body{
     max-width: 2000px;
     height: 100vh;
     overflow: hidden;
+    animation: fadein .5s;
 }
+
 
 h1, h3, input[type=submit], a, .error {
     color: white;

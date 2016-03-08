@@ -4,7 +4,8 @@
 
 <div id="container">
     <h1>Logout Successful</h1>
-    <a href="../index.html">Redirect in 3 seconds</a>
+    <p>Redirect in 3 seconds</p>
+    <a href="../index.html">Home</a>
 </div>
 
 <?php

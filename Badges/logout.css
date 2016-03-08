@@ -9,24 +9,22 @@ body{
     overflow: hidden;
 }
 
-h1{
+* {
     color: white;
-    text-decoration: none;
+    text-align: center;
     font-family: 'Open Sans';
+    
+}
+
+h1{
     font-weight: 400;
     font-size: 30pt;
-    text-align: center;
     padding-top: 1cm;
     border-width: thick;
 }
 
 a{
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Open Sans';
-    text-align: center;
+    font-size: 12pt;
     display: block;
     margin: 0 auto;
-
 }

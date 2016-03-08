@@ -1,3 +1,8 @@
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 body{
     background: url(../Images/Half_Dome.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -7,6 +12,7 @@ body{
     max-width: 2000px;
     height: 100vh;
     overflow: hidden;
+    animation: fadein .5s;
 }
 
 h1, a, label, p, td, input[type=submit]{
