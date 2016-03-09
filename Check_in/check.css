@@ -7,10 +7,13 @@ html {
 }
 
 #home div {
-    background: rgba(0, 0, 0, 0.33);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     width: 300px;
     height: 100px;
+    left: 0;
+    right: 0;
+    bottom: 10vh;
     margin: auto;
     position: absolute;
     transition: .5s;
@@ -18,7 +21,8 @@ html {
 
 #home div:hover {
     transition: .5s;
-    background: rgba(0, 157, 255, 0.77);
+    background: rgba(191, 191, 191, 0.77);
+    color: aqua;
 }
 
 #home {

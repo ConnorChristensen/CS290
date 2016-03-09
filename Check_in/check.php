@@ -63,6 +63,9 @@ include("../_header.php");
         </script>
 
         <?php
+        
+            //meters per degree of lattitude at 45 degrees: 111131.745
+            //.0001deg ~=~ 11.11m
             if($_POST) {
                 $uid = $_SESSION['uid'];
                 
@@ -77,7 +80,7 @@ include("../_header.php");
                 $lowerLong = $longitude-.001;
                 $upperLong = $longitude+.001;
                 
-//                $time = date("Y-m-d H-i-s", time());
+                $time = date("Y-m-d H-i-s", time());
                 
                 $findID = mysqli_query($con,"SELECT badgeid, name FROM Badges WHERE (longitude BETWEEN '$lowerLong' AND '$upperLong') AND (latitude BETWEEN '$lowerLat' AND '$upperLat')");
                 $rows = mysqli_fetch_row($findID);
@@ -85,7 +88,7 @@ include("../_header.php");
                     $unlocked = mysqli_query($con, "SELECT unlocked FROM User_Badges WHERE uid=$uid");
                     if ($unlocked) {
                         echo "You unlocked ".$rows[1]."<br>";
-                        mysqli_query($con, "UPDATE User_Badges SET unlocked=1 WHERE badgeid=$rows[0] AND uid=$uid");
+                        mysqli_query($con, "UPDATE User_Badges SET unlocked=1, obtained='$time' WHERE badgeid=$rows[0] AND uid=$uid");
                     }
                     else {
                         echo "You already unlocked ".$rows[1]."<br>";
