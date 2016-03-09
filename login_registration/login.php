@@ -2,7 +2,7 @@
 $emptyUsername = $emptyPassword = $error = "";
 $sessionSet = false;
 // Create connection
-$connect = mysqli_connect('oniddb.cws.oregonstate.edu','buffumw-db','PizSfykTJBUp3NbW','buffumw-db');
+
 
 // Check connection
 if (mysqli_connect_errno()) {
@@ -27,11 +27,11 @@ else {
             $password = stripslashes($password);
 
             //get the user information in an sql query
-            $query = mysqli_query($connect,"SELECT * FROM Users WHERE password = '$password' AND username = '$username'");
+            $query = mysqli_query($con,"SELECT * FROM Users WHERE password = '$password' AND username = '$username'");
             $rows = mysqli_num_rows($query);
             if ($rows == 1) {
                 $sql = "select uid from Users where username='$username'";
-				$result = mysqli_query($connect, $sql);
+				$result = mysqli_query($con, $sql);
 				$row = mysqli_fetch_array($result);
 				$uid = $row['uid'];
                 $_SESSION["login_user"] = $username;
