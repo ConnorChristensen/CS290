@@ -1,5 +1,8 @@
 <?php
 include("../_header.php");
+if(!isset($_SESSION["uid"])){
+    echo "<script type=\"text/javascript\">document.location.href=\"http://web.engr.oregonstate.edu/~chriconn/login_registration/login.php\";</script>";
+}
 ?>
 
     <!DOCTYPE html>
