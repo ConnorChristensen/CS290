@@ -2,7 +2,7 @@
     <html>
 
     <head>
-        <title>Badges registration page</title>
+        <title>Registration</title>
         <link rel="stylesheet" type="text/css" href="./register.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
         <?php

@@ -82,7 +82,7 @@ table img {
 }
 #dropDownHolder{
     position: absolute;
-    right: 30px;
+    right: 0px;
     top: 150px;
 }
 .hiddenDropDown{
@@ -92,7 +92,17 @@ table img {
     visibility: visible;
 }
 .dropDownThings{
-    color: blue;
+    width: 165px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.46);
+    color: white;
+    transition: .5s;
+}
+
+.dropDownThings:hover{
+    transition: .5s;
+    background: rgba(3, 178, 171, 0.46);
+    color: white;
 }
 
 

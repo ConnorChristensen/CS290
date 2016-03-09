@@ -4,7 +4,7 @@ session_start();
     <html>
 
     <head>
-        <title>Success!</title>
+        <title>Success</title>
     </head>
 
     <body>

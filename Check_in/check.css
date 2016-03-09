@@ -1,4 +1,29 @@
 * {
-    text-align: center;
-    
+    text-align: center;    
+}
+
+html {
+    background: #34a2f2;
+}
+
+#home div {
+    background: rgba(0, 0, 0, 0.33);
+    border-radius: 15px;
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    transition: .5s;
+}
+
+#home div:hover {
+    transition: .5s;
+    background: rgba(0, 157, 255, 0.77);
+}
+
+#home {
+    line-height: 100px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Open Sans';
 }

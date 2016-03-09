@@ -78,22 +78,24 @@ table {
     border-radius: 20px;
 }
 
-#register {
+#center {
+    text-align: center;
+}
+
+.navigation {
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
     transition: .5s;
     width: 200px;
-    left: 0;
-    right: 0;
-    margin: auto;
     border-radius: 10px;
+    display: inline-block;
 }
 
-#register a {
+.navigation a {
     text-align: center;
 }
 
-#register:hover {
+.navigation:hover {
     background: #009eac;
     transition: .5s;
 }

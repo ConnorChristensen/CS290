@@ -48,16 +48,21 @@ else {
     <html>
 
     <head>
-        <title>Badges Login Page</title>
-        <link rel="stylesheet" href="login.css"/>
+        <title>Login</title>
+        <link rel="stylesheet" href="login.css" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
         <img src="../Images/Logo_Name_Combo_White.png" alt="">
-       <div id="register">
-           <a href="register.php">REGISTER HERE</a>
-       </div>
+        <div id="center">
+            <div class="navigation">
+                <a href="register.php">REGISTER</a>
+            </div>
+            <div class="navigation">
+                <a href="../index.html">HOME</a>
+            </div>
+        </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <table>
                 <tr>

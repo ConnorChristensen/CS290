@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="badge.css">
     <script type="text/javascript" src="../javascript/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="../javascript/javaScript.js"></script>
+    <title>Badges</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     </head>
     <script>
@@ -29,14 +30,13 @@
                         <td id="dropDown">
                             <div id="dropDownClicker" onclick="dropDown()">
                                 <?php 
-                        if(isset($_SESSION["login_user"])){
-                            echo "<p>$_SESSION[login_user]</p>";
-                        }
-                        ?>
+                                    if(isset($_SESSION["login_user"])){
+                                        echo "<p>$_SESSION[login_user]</p>";
+                                    }
+                                ?>
                                     <img src="../Images/empty_user.png" alt="">
                             </div>
                             <div class="hiddenDropDown" id="dropDownHolder">
-                                <!--<div class="dropDownThings">account settings</div>-->
                                 <button class="dropDownThings" onclick="areYouSure()">logout</button>
                             </div>
                         </td>
