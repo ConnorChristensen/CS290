@@ -17,9 +17,13 @@ if(!isset($_SESSION["uid"])){
     </head>
 
     <body>
-        <p>Click the button to get your coordinates.</p>
-        <button onclick="getLocation()">Validate my Location</button>
-        <p id="demo"></p>
+        <a href="../Badges/badge.php" id="home">
+            <div class="box">BACK</div>
+        </a>
+        <div class="box" id="center" onclick="getLocation()">
+            <p>Validate my Location</p>
+        </div>
+        <div id="demo"></div>
         <script>
             var x = document.getElementById("demo");
 
@@ -30,7 +34,7 @@ if(!isset($_SESSION["uid"])){
                     x.innerHTML = "Geolocation is not supported by this browser.";
                 }
             }
-
+                
             function showPosition(position) {
                 var lat = position.coords.latitude;
                 var long = position.coords.longitude;
@@ -75,7 +79,7 @@ if(!isset($_SESSION["uid"])){
                 $latitude = $_POST["Lats"];
                 $longitude = $_POST["Longs"];
 
-                echo "<p>$latitude<br>$longitude</p>";
+                echo "<p>Latitude: $latitude<br>Longitude: $longitude</p>";
                 
                 $lowerLat = $latitude-.001;
                 $upperLat = $latitude+.001;
@@ -85,27 +89,24 @@ if(!isset($_SESSION["uid"])){
                 
                 $time = date("Y-m-d H-i-s", time());
                 
-                $findID = mysqli_query($con,"SELECT badgeid, name FROM Badges WHERE (longitude BETWEEN '$lowerLong' AND '$upperLong') AND (latitude BETWEEN '$lowerLat' AND '$upperLat')");
+                $findID = mysqli_query($con,"SELECT badgeid, name, image FROM Badges WHERE (longitude BETWEEN '$lowerLong' AND '$upperLong') AND (latitude BETWEEN '$lowerLat' AND '$upperLat')");
                 $rows = mysqli_fetch_row($findID);
                 if ($rows[0]) {
                     $unlocked = mysqli_query($con, "SELECT unlocked FROM User_Badges WHERE uid=$uid");
                     if ($unlocked) {
-                        echo "You unlocked ".$rows[1]."<br>";
+                        echo "<p class='big'>You unlocked ".$rows[1]."!</p>";
                         mysqli_query($con, "UPDATE User_Badges SET unlocked=1, obtained='$time' WHERE badgeid=$rows[0] AND uid=$uid");
+                        echo "<img src=$rows[2]>";
                     }
                     else {
-                        echo "You already unlocked ".$rows[1]."<br>";
+                        echo "<p class='big'>You already unlocked ".$rows[1]."</p>";
                     }
                 }
                 else {
-                    echo "You are not in a location that has a badge!<br>";
+                    echo "<p class='big'>You are not in a location that has a badge!</p>";
                 }
             }
        ?>
-
-            <a href="../Badges/badge.php" id="home">
-                <div>BACK</div>
-            </a>
     </body>
 
     </html>
