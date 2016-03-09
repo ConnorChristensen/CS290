@@ -81,11 +81,11 @@ if(!isset($_SESSION["uid"])){
 
                 echo "<p>Latitude: $latitude<br>Longitude: $longitude</p>";
                 
-                $lowerLat = $latitude-.001;
-                $upperLat = $latitude+.001;
+                $lowerLat = $latitude-.0005;
+                $upperLat = $latitude+.0005;
 
-                $lowerLong = $longitude-.001;
-                $upperLong = $longitude+.001;
+                $lowerLong = $longitude-.0005;
+                $upperLong = $longitude+.0005;
                 
                 $time = date("Y-m-d H-i-s", time());
                 
