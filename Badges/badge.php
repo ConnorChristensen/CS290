@@ -48,7 +48,7 @@
 
             <div id="banner">
                 <div id="recentBadge">
-                    <h1>You recently unlocked</h1>
+                    <h1 id="mssg"></h1>         <!--welcome mssg/recently unlocked-->   
                 </div>
             </div>
 
