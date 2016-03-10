@@ -175,6 +175,10 @@ body {
     height: 80%;
 }
 
+#oregon {
+    height: 200px;
+}
+
 /*About Us*/
 #aboutus {
     min-width: 800px;
