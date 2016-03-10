@@ -10,7 +10,7 @@
     <script>
         function areYouSure() {
         if(confirm("Are you sure you want to log out?")) {
-            window.location.href = "http://web.engr.oregonstate.edu/~chriconn/Badges/logout.php";
+            window.location.href = "http://web.engr.oregonstate.edu/~rosenber/Badges/logout.php";
         }
     }
 </script>
@@ -48,7 +48,7 @@
 
             <div id="banner">
                 <div id="recentBadge">
-                    <h1>You recently unlocked</h1>
+                    <h1 id="mssg"></h1>         <!--welcome mssg/recently unlocked-->   
                 </div>
             </div>
 
