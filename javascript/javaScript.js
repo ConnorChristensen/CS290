@@ -97,9 +97,13 @@ function mostRecentBadge(){
 
 	if (x == 1) {
 		badge = badges[idx];
+		$("#mssg").html("You recently unlocked");
+		$("#recentBadge").append("<div class='badge'><img src="+badge+"></div>");
 	}
-
-	$("#recentBadge").append("<div class='badge'><img src="+badge+"></div>");
+	else{
+		$("#mssg").html("Welcome! You can now unlock badges!<br>Click the validate location link to see if you can unlock a badge<br>Also try clicking the badges below for hints");
+	}
+	//$("#recentBadge").append("<div class='badge'><img src="+badge+"></div>");
 }
 
 //makes the popup for the badge turn on
