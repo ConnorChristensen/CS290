@@ -90,10 +90,12 @@ if(!isset($_SESSION["uid"])){
                 $time = date("Y-m-d H-i-s", time());
                 
                 $findID = mysqli_query($con,"SELECT badgeid, name, image FROM Badges WHERE (longitude BETWEEN '$lowerLong' AND '$upperLong') AND (latitude BETWEEN '$lowerLat' AND '$upperLat')");
-                $rows = mysqli_fetch_row($findID);
+				$rows = mysqli_fetch_row($findID);
                 if ($rows[0]) {
-                    $unlocked = mysqli_query($con, "SELECT unlocked FROM User_Badges WHERE uid=$uid");
-                    if ($unlocked) {
+					$result = mysqli_query($con, "SELECT unlocked FROM User_Badges WHERE uid=$uid and badgeid='$rows[0]'");
+					$unlocked = mysqli_fetch_row($result);
+					
+                    if (!$unlocked[0]) {
                         echo "<p class='big'>You unlocked ".$rows[1]."!</p>";
                         mysqli_query($con, "UPDATE User_Badges SET unlocked=1, obtained='$time' WHERE badgeid=$rows[0] AND uid=$uid");
                         echo "<img src=$rows[2]>";
