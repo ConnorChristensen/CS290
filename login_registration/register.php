@@ -5,12 +5,8 @@
         <title>Registration</title>
         <link rel="stylesheet" type="text/css" href="./register.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-        <?php
-        if($db = connect_db()) {
-            $test_db = 1;
-        }else{
-            $test_db = 0;
-        }
+ <?php
+if($db = connect_db()){$test_db = 1;}else{$test_db = 0;}
 
 //variables
 $user_name = $pass1 = $pass2 = $email = $temp = "";
@@ -26,15 +22,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 	}else{
 		//check if user_name uses valid characters and saves proper err msg if not
 		$user_name = $_POST["username"];
-		if(/*!preg_match("/^[A-Za-z0-9_]*S/",$_POST["username"])*/false){
+		if(!preg_match("/^[A-Za-z0-9_]*$/",$_POST["username"])){
 			$user_name_err = "Only letters, numbers and underscores allowed";
 			$test_name = 0;
 		}else{
 			//clean input with htmlspecialchars
 			$user_name = htmlspecialchars($_POST["username"]);
-			//$user_name = clean_input($_POST["username"]);
-			$test_name = 1;
-			$user_name_err = "";
+            
+            //checks if username has been inserted into database before
+            $result = $db->prepare("SELECT uid FROM Users WHERE username = ?");
+            $result->bind_param("s",$user_name);
+            if($result->execute()){
+                $result->bind_result($uid);
+                if($result->fetch()){
+                    $user_name_err = "Username already taken";
+                    $test_name = 0;
+                }else{
+                    $test_name = 1;
+                }
+            }
+            $result->close();
 		}
 	}
 	//checks if email was given
@@ -49,9 +56,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 		}else{
 			//clean input
 			$email = htmlspecialchars($_POST["email"]);
-			//$email = clean_input($_POST["email"]);
-			$test_email = 1;
-			$email_err = "";
+            
+            //checks if email has been inserted into database before
+            $result = $db->prepare("SELECT uid FROM Users WHERE email = ?");
+            $result->bind_param("s",$email);
+            if($result->execute()){
+                $result->bind_result($uid);
+                if($result->fetch()){
+                    $email_err = "Email is already associated with an account";
+                    $test_email = 0;
+                }else{
+                    $test_email = 1;
+                }
+            }
+            $result->close();
 		}
 	}
 	//checks if either password field is empty
@@ -71,27 +89,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
 			$pass_err = $pass_err_2 = "";
 		}
 	}
-	//checks if username and email have been inserted into database before
-	if($result = $db->query("select username,email from Users")){
-		while($obj = $result->fetch_object()){
-			if($obj->username == $user_name){
-				$user_name_err = "Username already taken";
-				$test_name = 0;
-				break;
-			}
-			if($obj->email == $email){
-				$email_err = "Email is already associated with a registered account";
-				$test_email = 0;
-				break;
-			}
-		}
-	}
+
 	if($test_name === 1 && $test_email === 1 && $test_pass === 1){
         if($stmt=$db->prepare("INSERT INTO Users (username,password,email,admin_status,date_created) VALUES (?,?,?,0,NOW())")){
             $stmt->bind_param('sss',$user_name,$pass1,$email);
             $stmt->execute();
             $_SESSION["login_user"] = $user_name;
             $insert=1;
+            $stmt->close();
         }else{
             $insert=0;
         }

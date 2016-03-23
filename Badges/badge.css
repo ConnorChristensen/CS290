@@ -132,26 +132,36 @@ table img {
 
 /*------------Badges------------*/
 #badges {
-    height: 100vh;
-    /*background-image: linear-gradient(#909cb2,#636d6d);*/
+    padding-bottom: 200px;
     background-image: linear-gradient(#0093ff,#41953a);
     margin-top: -30px;
 }
+
 #badges h1 {
     text-align: center;
     color: white;
     line-height: 100px;
 }
 
-.lockedBadge {
+#display {
+    width: 80vw;
+    margin: auto;
+    text-align: center;
+}
+
+.badge, .lockedBadge {
     height: 10vw;
     width: 10vw;
     display: inline-block;
     border-radius: 100px;
+    border: 1px solid black;
     margin: 1vw;
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 150px;
+    min-height: 150px;
     overflow: hidden;
+}
+
+.lockedBadge {
     background: black;
 }
 
@@ -161,29 +171,10 @@ table img {
     opacity: .2;
 }
 
-.badge {
-    height: 10vw;
-    width: 10vw;
-    display: inline-block;
-    border-radius: 100px;
-    margin: 1vw;
-    min-width: 100px;
-    min-height: 100px;
-    overflow: hidden;
-}
 .badge img {
     height: 100%;
     width: 100%;
 }
-#display {
-    width: 80vw;
-    height: auto;
-    margin: auto;
-    text-align: center;
-}
-
-
-
 
 
 
@@ -194,16 +185,31 @@ table img {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100vw; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    /*background-color: rgb(0,0,0); /* Fallback color */
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    left: 0;
+    right: 0;
+    top: 8vh;
+    margin: auto;
+    position: absolute;
     border: 1px solid #888;
     width: 60vw; /* Could be more or less, depending on screen size */
+}
+
+.modal-content img {
+    max-width: 500px;
+    max-height: 500px;
+    width: 30vw;
+}
+
+
+
+/*------------Media Screen Resize------------*/
+@media screen and (max-width: 700px) {
+    
 }

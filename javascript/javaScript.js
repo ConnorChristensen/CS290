@@ -9,7 +9,6 @@ var desc = "";
 var name = "";
 
 function images() {
-
 	$.ajax({
 			method:"get",
 			async:false,
@@ -113,7 +112,7 @@ function badgePopup(badgeNum) {
 
 	if (user_badges[badgeNum] == 1) {
 		get_badge(badgeNum + 1);
-		$("#myModalContent").append("<center><img src="+badges[badgeNum]+" height=200 width=200><br><h1>"+name+"</h1>"+desc+"<br><h3>Date Unlocked</h3>"+unlock_dates[badgeNum]+"<br>");
+		$("#myModalContent").append("<center><img src="+badges[badgeNum]+"><br><h1>"+name+"</h1>"+desc+"<br><h3>Date Unlocked</h3>"+unlock_dates[badgeNum]+"<br>");
 	}
 
 	else {
@@ -123,7 +122,10 @@ function badgePopup(badgeNum) {
 
 }
 
-
+//var fixed = document.getElementById('fixed');
+//fixed.addEventListener('touchmove', function(e) {
+//    e.preventDefault();
+//}, false);
 
 //places the badges on the badges page
 function getBadges(){
