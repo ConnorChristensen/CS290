@@ -63,88 +63,23 @@ function begin() {
 //Current measurement in feet
 
 function setMarkers() {
-    var markers = [
-        //NAME                              LATITUDE        LONGITUDE       RADIUS
-        
-        //OREGON
-        
-        ['Oregon',                          44.132080,      -120.541674,    370653],
-        
-        //OSU
-        ['OSU',                             44.563036,      -123.281925,    955],
-        ['KEC',                             44.567193,      -123.278480,    58],
-        ['The MU',                          44.565118,      -123.278900,    68],
-        ['Reser Stadium',                   44.559464,      -123.280878,    132],
-        ['Benton Hall',                     44.566219,      -123.274299,    23],
-        ['Linus Pauling Institute',         44.566537,      -123.283643,    42],
-        ['The Valley Library',              44.565185,      -123.275987,    55],
-        ['McNcary Dining',                  44.564075,      -123.272110,    32],
-        
-        //CORVALLIS
-        ['Corvallis',                       44.564924,      -123.272207,    3322],
-        ['The Waterfront',                  44.564798,      -123.257869],
-        ['Qdoba',                           44.568183,      -123.275449,    25],
-        ['Chipotle',                        44.569051,      -123.279108,    25],
-        ['Corvallis High School',           44.575642,      -123.268859],
-        ['Avery Park',                      44.553933,      -123.273736],
-        ['The Covered Bridge',              44.566488,      -123.300811,    25],
-        ['Bald Hill',                       44.565312,      -123.336420],
-        ['Mary\'s Peak',                    44.504233,      -123.551345],
-        ['Silver Falls State Park',         44.861062,      -122.624477],
-        
-        //EUGENE
-        ['University of Oregon',            44.043793,      -123.073169,    666],
-        
-        //OREGON CITIES
-        ['Astoria',                         46.15,          -123.88],
-        ['Baker',                           44.83,          -117.82],
-        ['Brookings',                       42.053817,      -124.284116],
-        ['Burns',                           43.60,          -118.95],
-        ['Cascade',                         45.68,          -121.88],
-        ['Eugene',                          44.070074,      -123.084317],
-        ['Klamath Fall',                    42.15,          -121.73],
-        ['La Grande',                       45.28,          -118.00],
-        ['Lake View',                       42.18,          -120.35],
-        ['Lincoln Beach',                   44.868747,      -124.039433],
-        ['Meacham',                         45.50,          -118.40],
-        ['Medford',                         42.37,          -122.87],
-        ['Newport',                         44.639438,      -124.053314],
-        ['North Bend',                      43.42,          -124.25],
-        ['Ontario',                         44.02,          -117.02],
-        ['Pendleton',                       45.68,          -118.85],
-        ['Portland',                        45.527781,      -122.684687],
-        ['Redmond',                         44.27,          -121.15],
-        ['Roseburg',                        43.23,          -123.37],
-        ['Salem',                           44.92,          -123.00],
-        ['Sexton',                          42.62,          -123.37],
-        ['The Dalles',                      45.62,          -121.15],
-        
-        //USA
-        ['Space Needle',                    47.620390,      -122.349139],
-        ['White House',	                    38.898010,      -77.036519],
-        
-        //WORLD
-        ['Amsterdam',                       52.372300,      4.895370],
-        ['Rotterdam',                       51.916320,      4.474163],
-        ['Amstelveen',                      52.295699,      4.854584],
-        ['Svalbard',                        78.237817,      15.446551],
-        ['Eiffel Tower',                    48.858020,      2.294813],
-        ['Leaning Tower of Piza',           43.723169,      10.396425],
-        ['Great Pyramid at Giza',           29.977741,      31.132775],
-        ['Monterey Bay Aquarium',           36.617966,      -121.901948],
-        ['Sydney Opera House',              -33.847617,     151.215137],
-        ['Tokyo Skytree',                   35.710714,      139.811475],
-        ['Taipei',                          24.78091,       120.993382],
-        ['Big Ben',                         52.50082,       -0.124503],
-        ['Kremlin',                         55.75212,       37.617328],
-        ['Angkor Wat',                      13.412396,      103.868316],
-        ['Machu Picchu',                    -13.163089,     -72.544534],
-        ['Taj Mahal',                       27.174538,      78.042187],
-        ['Statue of Liberty',               40.689746,      -74.044962],
-        ['The Louvre',                      48.860639,      2.337397],
-        ['Egyptian Museum of Antiquities',  30.047293,      31.233635],
-        ['Pyongyang',                       39.009792,      125.757451]
-    ];
+    var markers = [];
+    $.ajax({
+        method:"post",
+        async:false, 
+        url:"http://web.engr.oregonstate.edu/~chriconn/javascript/get_locations.php",
+        dataType:"json",
+        error:function(jqXHR) {alert(jqXHR.status);},
+        success:function(list) {
+            for (var i = 0; i < list.length; i++) {
+                var temp = list[i];
+                if(temp.public == "1") {
+                    markers.push([temp.name,temp.latitude,temp.longitude,temp.range]);
+                }
+            }
+        }
+	});
+    console.log(markers);
     return markers;
 }
 
