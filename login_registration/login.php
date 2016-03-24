@@ -100,6 +100,9 @@ else {
                 </tr>
             </table>
         </form>
+        <a href="forgot_password.php">
+            <div>Did you forget your password?</div>
+        </a>
     </body>
 
     </html>

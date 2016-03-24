@@ -1,0 +1,3 @@
+function changeDOM(){
+    $( ".validated" ).remove();
+}
