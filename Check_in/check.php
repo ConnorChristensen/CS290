@@ -97,7 +97,8 @@ if(!isset($_SESSION["uid"])){
 					
                     if (!$unlocked[0]) {
                         echo "<p class='big'>You unlocked ".$rows[1]."!</p>";
-                        mysqli_query($con, "UPDATE User_Badges SET unlocked=1, obtained='$time' WHERE badgeid=$rows[0] AND uid=$uid");
+//                        mysqli_query($con, "UPDATE User_Badges SET unlocked=1, obtained='$time' WHERE badgeid=$rows[0] AND uid=$uid");
+                        mysqli_query($con, "INSERT INTO User_Badges(badgeid, uid, obtained, unlocked) VALUES ('$rows[0]', '$uid', '$time', '1')");
                         echo "<img src=$rows[2]>";
                     }
                     else {
@@ -108,7 +109,7 @@ if(!isset($_SESSION["uid"])){
                     echo "<p class='big'>You are not in a location that has a badge!</p>";
                 }
             }
-       ?>
+        ?>
     </body>
 
     </html>
