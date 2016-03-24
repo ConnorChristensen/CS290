@@ -30,7 +30,7 @@ function get_user_badges() {
 			async:false,
 			url:"get_user_badges.php",
 			dataType:"json",
-//			error:function(jqXHR) {alert(jqXHR.status);},
+			error:function(jqXHR) {alert(jqXHR.status);},
 			success: function(list) {
 				for (var i = 0; i < list.length; i++) {
 					var temp = list[i];
@@ -43,28 +43,6 @@ function get_user_badges() {
 	console.log(user_badges);
 	console.log(unlock_dates);
 }
-
-
-//TESTING
-//function get_user_badges() {
-//	$.ajax({
-//			method:"get",
-//			async:false,
-//			url:"get_user_badges.php",
-//			dataType:"json",
-//			error:function(jqXHR) {alert(jqXHR.status);},
-//			success: function(list) {
-//				for (var i = 0; i < list.length; i++) {
-//					var temp = list[i];
-//					user_badges.push(temp.unlocked);
-//					unlock_dates.push(temp.obtained);
-//				}
-//				
-//			}
-//	});
-//	console.log(user_badges);
-//	console.log(unlock_dates);
-//}
 
 function get_badge(badgeid) {
 	badgeid = "badgeid=" + badgeid;

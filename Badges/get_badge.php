@@ -3,6 +3,10 @@ header('Content-type: application/json;charset=UTF-8');
 
 include("../_header.php");
 
+if(!isset($_SESSION["uid"])){
+    header("Location: http://web.engr.oregonstate.edu/~chriconn/login_registration/login.php");
+}
+
 $badge = array();
 
 $badgeid = $_GET['badgeid'];

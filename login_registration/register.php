@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
         <div id="home">
            <a href="../index.html">HOME</a>
        </div>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]); ?>">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <table>
                 <tr>
                     <td>
@@ -168,14 +168,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
                 }
 
                 $result = $db->query("select MAX(badgeid) as badgeid from Badges");
-		$obj = $result->fetch_object();
-		$num_badges = $obj->badgeid;
-                for ($i = 1; $i <= $num_badges; $i++) {
-                        $db->query("insert into User_Badges(badgeid, uid, obtained, unlocked) VALUES ('$i','$uid',NOW(),'0')");
+                $obj = $result->fetch_object();
+                $num_badges = $obj->badgeid;
                 }
-            }
             $_SESSION["uid"] = "$uid"; //automatically set session when user registers
-        ?>
+            ?>
             <script>
                 location.replace('http://web.engr.oregonstate.edu/~chriconn/Badges/badge.php');
             </script>
@@ -187,7 +184,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
             }
             $db->close();
         ?>
-                </form>
+    </form>
     </body>
 
     </html>

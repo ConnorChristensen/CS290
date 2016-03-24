@@ -3,6 +3,10 @@ header('Content-type: application/json;charset=UTF-8');
 
 include("../_header.php");
 
+if(!isset($_SESSION["uid"])){
+    header("Location: http://web.engr.oregonstate.edu/~chriconn/login_registration/login.php");
+}
+
 $user_badges = array();
 
 $uid = $_SESSION["uid"];
@@ -31,7 +35,6 @@ else {
 for($x = 1; $x <= $badgesNumber; $x++) {
     $content = mysqli_query($con, "SELECT obtained FROM User_Badges WHERE badgeid='$x' AND uid=$uid");
     if ($validNumber = mysqli_num_rows($content)) {
-        printf("Number %d\tis unlocked\n", $x);
         $date = mysqli_fetch_array($content);
         $temp = array(
             "badgeid" => "$x",
@@ -41,7 +44,6 @@ for($x = 1; $x <= $badgesNumber; $x++) {
         array_push($user_badges, $temp);
     }
     else {
-        printf("Number %d\tis locked\n", $x);   
         $temp = array(
             "badgeid" => "$x",
             "obtained" => "2016-03-23 15:10:23",
