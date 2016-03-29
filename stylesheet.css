@@ -8,8 +8,16 @@ body {
 }
 
 
-
 /*Navigation*/
+#button, #buttons a {
+    background: hsla(0, 0%, 0%, 0.47);
+    color: white;
+}
+
+#button:hover, #buttons a:hover {
+    background: rgb(61, 178, 240);
+}
+
 #header {
     min-width: 800px;
     z-index: 1;
@@ -30,21 +38,13 @@ body {
 }
 #buttons a{
     display: inline-block;
-    background: hsla(0, 0%, 0%, 0.4);
     line-height: 60px;
     margin-top: 15px;
-    color: white;
     text-decoration: none;
     font-family: 'Open Sans';
     font-weight: 100;
     width: 100px;
-    transition: .5s;
-    border-radius: 10px;
-    
-}
-#buttons a:hover {
-    background: #009eac;
-    transition: .5s;
+    border-radius: 10px;   
 }
 
 
@@ -114,14 +114,9 @@ body {
     width: 200px;
     margin: auto;
     text-align: center;
-    background: rgba(0, 0, 0, 0.47);
     padding: 10px 10px;
     text-decoration: none;
-    color: white;
-}
-#button:hover {
-    background: #009eac;
-    transition: .5s;
+    z-index: 2;
 }
 
 
@@ -223,10 +218,29 @@ body {
 }
 
 
+.arrow {
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    top: 93vh;
+    width: 60px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.62);
+}
+.arrow img {
+    opacity: .8;
+    height: 50px;
+}
+
 /*Screen Resizing*/
 @media screen and (max-width: 1000px) {
     .sized {
         height: 40vh;
+    }
+    .arrow {
+        top: 57vh;
     }
     .content {
         width: 100vw;

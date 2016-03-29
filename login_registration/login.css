@@ -22,9 +22,6 @@ h1, a, label, p, td, input[type=submit]{
 }
 
 h1 {
-    padding-top: 1cm;
-    padding-left: 1cm;
-    padding-bottom: .25cm;
     font-size: 40px;
     border-width: thick;
 }
@@ -61,7 +58,6 @@ img {
 }
 
 a {
-    padding-left: 1cm;
     font-size: 18px;
     color: #f4f8ff;
 }
@@ -93,6 +89,8 @@ table {
 
 .navigation a {
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .navigation:hover {

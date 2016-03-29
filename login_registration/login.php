@@ -56,12 +56,16 @@ else {
     <body>
         <img src="../Images/Logo_Name_Combo_White.png" alt="">
         <div id="center">
-            <div class="navigation">
-                <a href="register.php">REGISTER</a>
-            </div>
-            <div class="navigation">
-                <a href="../index.html">HOME</a>
-            </div>
+            <a href="register.php">
+                <div class="navigation">
+                    REGISTER
+                </div>
+            </a>
+            <a href="../index.html">
+                <div class="navigation">
+                    HOME
+                </div>
+            </a>
         </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <table>

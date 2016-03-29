@@ -107,10 +107,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
     </head>
 
     <body>
-       <img src="../Images/Logo_Name_Combo_White.png" alt="">
-        <div id="home">
-           <a href="../index.html">HOME</a>
-       </div>
+        <img src="../Images/Logo_Name_Combo_White.png" alt="">
+        <a href="../index.html">
+            <div id="home">HOME</div>
+        </a>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <table>
                 <tr>
@@ -136,7 +136,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $test_db == true){
                 </tr>
                 <tr>
                     <td class="inputField">
-                        <input type="password" name="password2" class="textBox" placeholder="comfirm password">
+                        <input type="password" name="password2" class="textBox" placeholder="confirm password">
                         <span class="error">
                                 <?php echo $pass_err_2; ?>
                             </span>
