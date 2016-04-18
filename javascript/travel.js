@@ -58,6 +58,63 @@ function begin() {
 //    mgr.refresh();
 
     drop(map, markers);
+    
+    showBadgeRange(map, markers);
+}
+
+
+function showBadgeRange(map, markers) {
+    
+    // Define the LatLng coordinates for the polygon's path.
+    for (var v = 0; v < markers.length; v++) {
+        setBadgeRange(map, markers[v][0], markers[v][1], markers[v][2], markers[v][3]);
+    }
+}
+
+function setBadgeRange(map, name, latitude, longitude, range) {
+    var latRange, longRange, upperLat, lowerLat, upperLong, lowerLong;
+    
+    latRange = range / 111132;
+    longRange = range / ((Math.cos(Math.abs(latitude)) * 111) * 1000);
+    
+    upperLat = parseFloat(latitude)+latRange;
+    lowerLat = parseFloat(latitude)-latRange;
+    
+    upperLong = parseFloat(longitude)+longRange;
+    lowerLong = parseFloat(longitude)-longRange;
+    
+//    alert("Name: "+name+"\nrange: "+range+"\nlatitude: "+latitude+"\nlongitude: "+longitude+"\nupperLat: "+upperLat+"\nlowerLat: "+lowerLat+"\nupperLong: "+upperLong+"\nlowerLong: "+lowerLong);
+        
+    var rangeCoords = [
+        {lat: lowerLat, lng: lowerLong},
+        {lat: lowerLat, lng: upperLong},
+        {lat: upperLat, lng: upperLong},
+        {lat: upperLat, lng: lowerLong}
+    ];    
+    
+//    good map fill '#289090'
+    
+    var colorFill = ' ';
+    if (range >= 500) {
+        colorFill = '#a35125';   
+    }
+    else if (range >= 20 && range < 500) {
+        colorFill = '#289090';   
+    }
+    else {
+        colorFill = '#284490';   
+    }
+    
+    // Construct the polygon.
+    var shape = new google.maps.Polygon({
+        paths: rangeCoords,
+        strokeColor: '#606262',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: colorFill,
+        fillOpacity: 0.3
+    });
+    shape.setMap(map);
 }
 
 //Current measurement in feet

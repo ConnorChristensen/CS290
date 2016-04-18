@@ -11,9 +11,11 @@ if(!isset($_SESSION["uid"])){
     <head>
         <title>Validate</title>
         <link rel="stylesheet" href="check.css">
-        <script type="text/javascript" src="../javascript/check.js"></script>
         <script type="text/javascript" src="../javascript/jquery-1.12.0.min.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+        
+        <script type="text/javascript" src="../javascript/check.js"></script>
+        
     </head>
 
     <body>
@@ -81,32 +83,51 @@ if(!isset($_SESSION["uid"])){
 
                 echo "<p>Latitude: $latitude<br>Longitude: $longitude</p>";
                 
-                $lowerLat = $latitude-.0005;
-                $upperLat = $latitude+.0005;
-
-                $lowerLong = $longitude-.0005;
-                $upperLong = $longitude+.0005;
-                
-                $time = date("Y-m-d H-i-s", time());
-                
-                $findID = mysqli_query($con,"SELECT badgeid, name, image FROM Badges WHERE (longitude BETWEEN '$lowerLong' AND '$upperLong') AND (latitude BETWEEN '$lowerLat' AND '$upperLat')");
-				$rows = mysqli_fetch_row($findID);
-                if ($rows[0]) {
-					$result = mysqli_query($con, "SELECT unlocked FROM User_Badges WHERE uid=$uid and badgeid='$rows[0]'");
-					$unlocked = mysqli_fetch_row($result);
-					
-                    if (!$unlocked[0]) {
-                        echo "<p class='big'>You unlocked ".$rows[1]."!</p>";
-//                        mysqli_query($con, "UPDATE User_Badges SET unlocked=1, obtained='$time' WHERE badgeid=$rows[0] AND uid=$uid");
-                        mysqli_query($con, "INSERT INTO User_Badges(badgeid, uid, obtained, unlocked) VALUES ('$rows[0]', '$uid', '$time', '1')");
-                        echo "<img src=$rows[2]>";
-                    }
-                    else {
-                        echo "<p class='big'>You already unlocked ".$rows[1]."</p>";
-                    }
+                if($query = mysqli_query($con, "SELECT * FROM Badges")) {
+                    $badgesNumber = mysqli_num_rows($query);
                 }
                 else {
-                    echo "<p class='big'>You are not in a location that has a badge!</p>";
+                    echo "It returned nothing";
+                }
+                
+                $time = date("Y-m-d H-i-s", time());
+                for ($i = 0; $i < $badgesNumber; $i++) {
+                    $info = mysqli_query($con, "SELECT  * FROM  `Badges` WHERE  `badgeid`=$i");
+                    $info = mysqli_fetch_assoc($info);
+
+                    $latRange = $info["range"] / 111132; 
+                    $longRange = $info["range"] / ((cos(abs($info["latitude"])) * 111)*1000);
+                    
+                    $lowerLat = $info["latitude"]-$latRange;
+                    $upperLat = $info["latitude"]+$latRange;
+
+                    $lowerLong = $info["longitude"]-$longRange;
+                    $upperLong = $info["longitude"]+$longRange;
+                    
+                    if ($latitude >= $lowerLat and $latitude <= $upperLat and $longitude >= $lowerLong and $longitude <= $lowerLat) {
+                        $findID = mysqli_query($con, "SELECT  `badgeid`, `name`, `image` FROM Badges WHERE `badgeid` =$i");
+                
+                        $rows = mysqli_fetch_row($findID);
+                        if ($rows[0]) {
+                            $result = mysqli_query($con, "SELECT unlocked FROM User_Badges WHERE uid=$uid and badgeid='$rows[0]'");
+                            $unlocked = mysqli_fetch_row($result);
+
+                            if (!$unlocked[0]) {
+                                echo "<p class='big'>You unlocked ".$rows[1]."!</p>";
+//                                mysqli_query($con, "UPDATE User_Badges SET unlocked=1, obtained='$time' WHERE badgeid=$rows[0] AND uid=$uid");
+                                mysqli_query($con, "INSERT INTO User_Badges(badgeid, uid, obtained, unlocked) VALUES ('$rows[0]', '$uid', '$time', '1')");
+                                echo "<img src=$rows[2]>";
+                                break;
+                            }
+                            else {
+                                echo "<p class='big'>You already unlocked ".$rows[1]."</p>";
+                            }
+                        }
+                        else {
+                            echo "<p class='big'>You are not in a location that has a badge!</p>";
+                            break;
+                        }
+                    }
                 }
             }
         ?>
