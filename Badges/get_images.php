@@ -10,7 +10,7 @@ if(!isset($_SESSION["uid"])){
 
 $images = array();
 
-$sql = "select image from Badges";
+$sql = "SELECT image FROM Badges";
 
 $result = mysqli_query($con, $sql) or die("Error: " . mysqli_error($con));
 
