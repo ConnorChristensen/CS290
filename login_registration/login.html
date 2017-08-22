@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="login.css" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<img src="/~buffumw/Geo/Images/Logo_Name_Combo_White.png" alt="">
+
+	<div id="center">
+		<a href="/~buffumw/Geo/login_registration/register.html">
+			<div class="navigation">REGISTER</div>
+		</a>
+		<a href="/~buffumw/Geo/index.html">
+			<div class="navigation">HOME</div>
+		</a>
+	</div>
+   <form id="login" method="" action="">
+				
+		<!--<label for="username" id="username_label">User Name: </label>-->
+      <input type="text" name="username" id="username" class="textBox" placeholder="username"> 
+		<label class="error" for="username" id="username_error">*This field is required</label>
+		<br>
+
+		<!--<label for="password" id="password_label">Password: </label>-->
+		<input type="password" name="password" id="password" class="textBox" placeholder="password">
+		<label class="error" for="password" id="password_error">*This field is required</label>
+		<br>
+
+      <input type="submit" value="submit" class="login_button" id="submit">
+	</form>
+	<a href="forgot_password.php">
+		<div>Did you forget your password?</div>
+	</a>
+</body>
+
+</html>

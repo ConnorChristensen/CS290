@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<title>Registration</title>
+<link rel="stylesheet" type="text/css" href="./register.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<img src="/~buffumw/Geo/Images/Logo_Name_Combo_White.png" alt="">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/~buffumw/Geo/javascript/login_register.js"></script>
+
+<div id="center">
+	<a href="/~buffumw/Geo/login_registration/login.html">
+		<div class="navigation">LOGIN</div>
+	</a>
+	<a href="/~buffumw/Geo/index.html">
+		<div class="navigation">HOME</div>
+	</a>
+</div>
+
+<form id="registration" method="" action="">
+
+	<input type="text" name="username" id="username" class="textBox" placeholder="username"> 
+	<label class="error" for="username" id="username_error">*This field is required</label>
+	<br>
+
+	<input type="password" name="password" id="password" class="textBox" placeholder="password">
+	<label class="error" for="password" id="password_error">*This field is required</label>
+	<br>
+
+	<input type="password" name="password2" class="textBox" placeholder="confirm password">
+	<label class="error" for="password" id="password_error">*Passwords do not match</label>
+	<br>
+
+	<input type="text" name="email" id="email" class="textBox" placeholder="john@doe.com">
+	<label class="error" for="email" id="email_error">*This field is required</label>
+
+	<input type="submit" value="submit" class="register_button" id="submit">
+</form>
+</body>
+</html>
